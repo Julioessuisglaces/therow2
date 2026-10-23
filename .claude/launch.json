@@ -4,7 +4,7 @@
     {
       "name": "site",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["-e", "const h=require('http'),f=require('fs'),p=require('path');const r=p.join(process.cwd(),'site');const t={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.webp':'image/webp','.avif':'image/avif','.png':'image/png'};h.createServer((q,s)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.endsWith('/'))u+='index.html';const fp=p.join(r,u);if(!fp.startsWith(r))return s.writeHead(403).end();f.readFile(fp,(e,d)=>{if(e)return s.writeHead(404).end('404');s.writeHead(200,{'Content-Type':t[p.extname(fp)]||'application/octet-stream'});s.end(d)})}).listen(5173,()=>console.log('http://localhost:5173'))"],
+      "runtimeArgs": ["server.js"],
       "port": 5173
     }
   ]

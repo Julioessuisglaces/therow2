@@ -103,3 +103,7 @@ Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias T
 - `draft-v1` tag: first multi-section mockup (Archivo, then Raleway, The Row atmosphere).
 - Then: rebuilt as the one-page layout from `BRIEF.md`, animations removed, new bio portrait.
 - Then: change round 2 (section 7 above).
+
+## 11. Threshold strobe (Julien's request)
+
+The threshold section (`.threshold`) is now a 300vh scroll track with a sticky 100vh stage. While it scrolls past, the stage inverts black/white **5 times** (10 steps: white → black → … → white, sentence colour inverted each time), driven by scroll position in `site/main.js`. Safety: steps are at least 340 ms apart, so even a fast scroll never exceeds 3 flashes per second (WCAG 2.3.1). Disabled entirely with `prefers-reduced-motion`. This is the only animation on the page; keep it that way.

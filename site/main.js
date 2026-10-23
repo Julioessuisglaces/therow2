@@ -28,6 +28,34 @@ drawer.querySelector('.drawer__close').addEventListener('click', () => closeDraw
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeDrawer(false)));
 drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
+// Threshold strobe: as the pinned stage scrolls past, it inverts black/white 5 times
+// (10 steps, ending white). Steps are spaced at least 340 ms apart so a fast scroll
+// never flashes more than 3 times per second (WCAG 2.3.1).
+const threshold = document.querySelector('.threshold');
+const stage = threshold.querySelector('.threshold__stage');
+const STEPS = 10, MIN_GAP = 340;
+let step = 0, lastStep = 0, timer = null;
+const targetStep = () => {
+  const r = threshold.getBoundingClientRect();
+  const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+  return Math.min(STEPS, Math.floor(p * (STEPS + 1)));
+};
+const tick = () => {
+  timer = null;
+  const target = targetStep();
+  if (target === step) return;
+  const wait = MIN_GAP - (performance.now() - lastStep);
+  if (wait > 0) { timer = setTimeout(tick, wait); return; }
+  step += target > step ? 1 : -1;
+  lastStep = performance.now();
+  stage.classList.toggle('is-dark', step % 2 === 1);
+  if (step !== target) timer = setTimeout(tick, MIN_GAP);
+};
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  addEventListener('scroll', () => { if (!timer) tick(); }, { passive: true });
+  tick();
+}
+
 // 6.1 Mandate details: independent toggles, content always in the DOM
 document.querySelectorAll('.toggle').forEach(btn => {
   const panel = document.getElementById(btn.getAttribute('aria-controls'));

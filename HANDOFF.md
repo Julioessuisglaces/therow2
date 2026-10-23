@@ -37,7 +37,7 @@ Then open http://localhost:5173. No build step, no dependencies. Plain HTML, CSS
 
 ## 5. Page structure today (follows BRIEF.md section 3)
 
-0. Fixed header: "Julien Ioset" left; Mandats, Julien, Contact, globe + FR right. Below 900px: "Menu" opens a full-screen drawer.
+0. Fixed header: "Julien Ioset" left; Services, À propos, Insights, Contact, globe + fr right. Below 900px: "Menu" opens a full-screen drawer.
 1. Hero `#top`: full-bleed portrait (`<picture>` with a separate mobile crop) + role line as the only `h1`.
 2. Threshold: one full empty screen with one line of text (`h2`).
 3. Mandats `#mandats`: intro line, three offers (I. Conseiller, II. Planifier, III. Diriger), each with a "Détails" toggle (`hidden="until-found"`, independent), then "TVA non applicable." and the booking line.
@@ -68,6 +68,13 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 7. Mandats intro: "Trois services. Une seule exigence&#8239;: la marque."
 8. "Réserver ↗" now sits on its own line under "Tout commence par un entretien de trente minutes."
 9. Sur demande: "Les études de cas sont transmises sur demande." (Julien typed "Etudes de cas sont transmises sur demande."; "Les" added for grammar, to confirm.)
+
+## 7b. Change round 3 (done)
+
+- Menu: Services (`#mandats`) · À propos (`#julien`) · Insights (`/insights/`) · Contact (`#contact`) · globe + ISO code in lowercase (`fr`). The globe links to the footer language list.
+- Footer first column: "Choisissez votre langue :" with a working `<select>` (Français, Deutsch, English). Changing it updates the globe code in the header (mockup only, no translated pages exist).
+- Footer right column: newsletter form like The Row: label "Rester informé", email field with underline and `>` submit, consent checkbox "J’accepte la politique de confidentialité." (link to `/privacy-policy/`). Both fields required, inline errors, goes through `submitLead('newsletter')`. Success sentence `[TODO: copy]`.
+- The philosophy statement moved to a centred block above the copyright.
 
 Possible follow-ups: the contact photo (boat, 618px wide source) is shown at half-screen width, so it is upscaled; a larger file or Julien's chosen image would be sharper. The globe "FR" is a button with no language menu yet (only French exists).
 

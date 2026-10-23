@@ -99,6 +99,28 @@ caseForm.addEventListener('submit', async e => {
   }
 });
 
+// Footer language list: mirrors the choice in the header (mockup, French only for now)
+const langSelect = document.getElementById('langue');
+langSelect.addEventListener('change', () => {
+  document.querySelectorAll('.lang__code').forEach(el => { el.textContent = langSelect.value; });
+  document.querySelectorAll('.lang').forEach(el => el.setAttribute('aria-label', `${langSelect.value}, choisir la langue`));
+});
+
+// Footer newsletter (The Row pattern: email field, ">" submit, consent checkbox)
+const newsForm = document.getElementById('news-form');
+const newsDone = newsForm.querySelector('.news__done');
+liveClear(newsForm);
+newsForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!validate(newsForm)) return;
+  const res = await submitLead('newsletter', { email: newsForm.email.value });
+  if (res.ok) {
+    newsForm.reset();
+    newsDone.hidden = false;
+    newsDone.focus();
+  }
+});
+
 // 6.3 Contact form
 const contactForm = document.getElementById('contact-form');
 const contactDone = contactForm.querySelector('.form__done');

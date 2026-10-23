@@ -71,15 +71,16 @@
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top">Julien Ioset</a>
   <nav class="nav__links" aria-label="Navigation principale">
-    <a href="#mandats">Mandats</a>
-    <a href="#julien">Julien</a>
+    <a href="#mandats">Services</a>
+    <a href="#julien">À propos</a>
+    <a href="/insights/">Insights</a>
     <a href="#contact">Contact</a>
-    <button class="lang" type="button" aria-label="FR, langue&#8239;: français">
+    <a class="lang" href="#langue" aria-label="fr, choisir la langue">
       <svg class="lang__icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
         <circle cx="8" cy="8" r="7"/><ellipse cx="8" cy="8" rx="3" ry="7"/><path d="M1 8h14M2.2 4.5h11.6M2.2 11.5h11.6"/>
       </svg>
-      <span>FR</span>
-    </button>
+      <span class="lang__code">fr</span>
+    </a>
   </nav>
   <!-- TODO: copy (Menu / Fermer) -->
   <button class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
@@ -88,15 +89,16 @@
 <div class="drawer" id="drawer" hidden>
   <button class="drawer__close" type="button">Fermer</button>
   <nav class="drawer__links" aria-label="Navigation mobile">
-    <a href="#mandats">Mandats</a>
-    <a href="#julien">Julien</a>
+    <a href="#mandats">Services</a>
+    <a href="#julien">À propos</a>
+    <a href="/insights/">Insights</a>
     <a href="#contact">Contact</a>
-    <button class="lang" type="button" aria-label="FR, langue&#8239;: français">
+    <a class="lang" href="#langue" aria-label="fr, choisir la langue">
       <svg class="lang__icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
         <circle cx="8" cy="8" r="7"/><ellipse cx="8" cy="8" rx="3" ry="7"/><path d="M1 8h14M2.2 4.5h11.6M2.2 11.5h11.6"/>
       </svg>
-      <span>FR</span>
-    </button>
+      <span class="lang__code">fr</span>
+    </a>
   </nav>
 </div>
 
@@ -258,8 +260,12 @@
 <footer class="footer">
   <div class="footer__grid">
     <div class="footer__col footer__col--first">
-      <p class="footer__k">Langue&#8239;:</p>
-      <p>Français</p>
+      <label class="footer__k" for="langue">Choisissez votre langue&#8239;:</label>
+      <select class="select" id="langue" name="langue">
+        <option value="fr" lang="fr" selected>Français</option>
+        <option value="de" lang="de">Deutsch</option>
+        <option value="en" lang="en">English</option>
+      </select>
       <p class="footer__k footer__gap">Région&#8239;:</p>
       <p>Suisse romande</p>
     </div>
@@ -281,10 +287,23 @@
       <a href="tel:+41789138008">+41 78 913 80 08</a>
       <a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a>
     </div>
-    <div class="footer__col footer__philo">
-      <p class="footer__k">Le prix est un signal. La cohérence en est l’origine.</p>
-      <p>Lorsque l’histoire, l’image et l’expérience sont maintenues avec exigence, la valeur cesse d’être expliquée. Elle se perçoit.</p>
-    </div>
+    <form class="footer__col footer__news" id="news-form" novalidate>
+      <label class="footer__k" for="news-email">Rester informé</label>
+      <div class="footer__field">
+        <input type="email" id="news-email" name="email" required autocomplete="email"
+               placeholder="Adresse e-mail" aria-describedby="news-email-err">
+        <button type="submit" aria-label="S’inscrire à la newsletter">&gt;</button>
+      </div>
+      <p class="field__err" id="news-email-err" aria-live="polite"></p>
+      <label class="check"><input type="checkbox" id="news-consent" name="consent" required aria-describedby="news-consent-err"> <span>J’accepte la <a href="/privacy-policy/"><u>politique de confidentialité</u></a>.</span></label>
+      <p class="field__err" id="news-consent-err" aria-live="polite"></p>
+      <!-- TODO: copy (success sentence) -->
+      <p class="news__done" hidden tabindex="-1">[TODO: copy]</p>
+    </form>
+  </div>
+  <div class="footer__philo">
+    <p class="footer__k">Le prix est un signal. La cohérence en est l’origine.</p>
+    <p>Lorsque l’histoire, l’image et l’expérience sont maintenues avec exigence, la valeur cesse d’être expliquée. Elle se perçoit.</p>
   </div>
   <p class="footer__copy">© 2026 Julien Ioset</p>
 </footer>

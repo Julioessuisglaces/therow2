@@ -286,10 +286,3 @@ p + p { margin-top: 1.1em; }
   .footer__col--first { border-right: 0; padding-right: 0; }
   .footer__news { grid-column: 1 / -1; }
 }
-
-/* Readable text (trial): 14px for what must be read; interface stays 10–12px */
-.offer > p:not(.offer__meta):not(.offer__price),
-.offer__details p,
-.cartel__text > p:not(.caption) { font-size: 14px; line-height: 1.75; letter-spacing: .005em; }
-.offer p { max-width: 340px; }
-.cartel__text { max-width: 400px; }

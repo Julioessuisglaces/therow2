@@ -74,7 +74,7 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 - Menu: Services (`#mandats`) · À propos (`#julien`) · Insights (`/insights/`) · Contact (`#contact`) · globe + ISO code in lowercase (`fr`). The globe links to the footer language list.
 - Footer first column: "Choisissez votre langue :" with a working `<select>` (Français, Deutsch, English). Changing it updates the globe code in the header (mockup only, no translated pages exist).
 - Footer right column: newsletter form like The Row: label "Rester informé", email field with underline and `>` submit, consent checkbox "J’accepte la politique de confidentialité." (link to `/privacy-policy/`). Both fields required, inline errors, goes through `submitLead('newsletter')`. Success sentence `[TODO: copy]`.
-- The philosophy statement moved to a centred block above the copyright.
+- The philosophy statement ("Le prix est un signal…" and "Lorsque l’histoire…") was removed from the footer at Julien's request.
 
 Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias Tigiser), B&W, `site/img/rowing-600/1000/1500.webp`. The globe "FR" is a button with no language menu yet (only French exists).
 

@@ -28,32 +28,21 @@ drawer.querySelector('.drawer__close').addEventListener('click', () => closeDraw
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeDrawer(false)));
 drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-// Threshold strobe: as the pinned stage scrolls past, it inverts black/white 5 times
-// (10 steps, ending white). Steps are spaced at least 340 ms apart so a fast scroll
-// never flashes more than 3 times per second (WCAG 2.3.1).
+// Threshold: two hairlines converge on the sentence as the section scrolls in,
+// slowing down and stopping short of it. Drawn while the sentence is pinned,
+// complete at 80% of the pinned track.
 const threshold = document.querySelector('.threshold');
-const stage = threshold.querySelector('.threshold__stage');
-const STEPS = 10, MIN_GAP = 340;
-let step = 0, lastStep = 0, timer = null;
-const targetStep = () => {
+let frame = 0;
+const drawLines = () => {
+  frame = 0;
   const r = threshold.getBoundingClientRect();
-  const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
-  return Math.min(STEPS, Math.floor(p * (STEPS + 1)));
-};
-const tick = () => {
-  timer = null;
-  const target = targetStep();
-  if (target === step) return;
-  const wait = MIN_GAP - (performance.now() - lastStep);
-  if (wait > 0) { timer = setTimeout(tick, wait); return; }
-  step += target > step ? 1 : -1;
-  lastStep = performance.now();
-  stage.classList.toggle('is-dark', step % 2 === 1);
-  if (step !== target) timer = setTimeout(tick, MIN_GAP);
+  const t = Math.min(1, Math.max(0, -r.top / (0.8 * (r.height - innerHeight))));
+  threshold.style.setProperty('--p', (1 - (1 - t) ** 3).toFixed(4)); // ease-out
 };
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  addEventListener('scroll', () => { if (!timer) tick(); }, { passive: true });
-  tick();
+  addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(drawLines); }, { passive: true });
+  addEventListener('resize', drawLines);
+  drawLines();
 }
 
 // 6.1 Mandate details: independent toggles, content always in the DOM

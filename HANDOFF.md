@@ -104,6 +104,6 @@ Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias T
 - Then: rebuilt as the one-page layout from `BRIEF.md`, animations removed, new bio portrait.
 - Then: change round 2 (section 7 above).
 
-## 11. Threshold strobe (Julien's request)
+## 11. Threshold: converging hairlines (Julien's choice)
 
-The threshold section (`.threshold`) is now a 300vh scroll track with a sticky 100vh stage. While it scrolls past, the stage inverts black/white **5 times** (10 steps: white → black → … → white, sentence colour inverted each time), driven by scroll position in `site/main.js`. Safety: steps are at least 340 ms apart, so even a fast scroll never exceeds 3 flashes per second (WCAG 2.3.1). Disabled entirely with `prefers-reduced-motion`. This is the only animation on the page; keep it that way.
+The black/white strobe was tried and removed. Now the threshold section (`.threshold`) is a 200vh scroll track with a sticky 100vh stage. Once the sentence is pinned at the centre, two 1px lines (`--soft` grey) grow from the left and right screen edges towards it, slow down (ease-out) and stop 32px before the first and last words. Driven by scroll in `site/main.js` (`drawLines`, sets `--p` from 0 to 1, complete at 80% of the track). Meaning: two things side by side (comparison) stop where the sentence begins. With `prefers-reduced-motion` the lines are simply shown, fully drawn. This is the only animation on the page; keep it that way.

@@ -1,206 +1,263 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-CH">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Julien Ioset — De prix à marque</title>
+<title>Julien Ioset · Direction marketing externalisée · Suisse romande</title>
+<!-- TODO: Julien to validate the meta description -->
+<meta name="description" content="[TODO: Julien to validate]">
+<link rel="canonical" href="https://julienioset.ch/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:url" content="https://julienioset.ch/">
+<meta property="og:title" content="Julien Ioset · Direction marketing externalisée · Suisse romande">
+<meta property="og:description" content="Stratégie de marque. Direction marketing externalisée. PME de Suisse romande.">
+<!-- TODO: confirm the production path of the portrait -->
+<meta property="og:image" content="https://julienioset.ch/img/hero-1600.webp">
+
+<link rel="preload" as="image" type="image/webp"
+      imagesrcset="img/hero-1000.webp 1000w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w"
+      imagesizes="100vw" media="(min-width: 640px)">
+<link rel="preload" as="image" type="image/webp"
+      imagesrcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w"
+      imagesizes="100vw" media="(max-width: 639px)">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200..700;1,300..400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://julienioset.ch/#julien",
+      "name": "Julien Ioset",
+      "jobTitle": "Directeur marketing externalisé",
+      "email": "mailto:j.ioset@julienioset.ch",
+      "url": "https://julienioset.ch/",
+      "sameAs": ["https://www.linkedin.com/in/julienioset/"],
+      "worksFor": { "@id": "https://julienioset.ch/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://julienioset.ch/#org",
+      "name": "Julien Ioset",
+      "url": "https://julienioset.ch/",
+      "email": "mailto:j.ioset@julienioset.ch",
+      "founder": { "@id": "https://julienioset.ch/#julien" },
+      "sameAs": ["https://www.linkedin.com/in/julienioset/"],
+      "makesOffer": [
+        { "@type": "Offer", "name": "Conseiller", "price": "2000", "priceCurrency": "CHF",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2000", "priceCurrency": "CHF", "unitText": "mois" } },
+        { "@type": "Offer", "name": "Planifier", "price": "7500", "priceCurrency": "CHF" },
+        { "@type": "Offer", "name": "Diriger", "price": "5000", "priceCurrency": "CHF",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "5000", "priceCurrency": "CHF", "unitText": "mois" } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-<!-- Navigation (maquette : liens inactifs) -->
+<!-- TODO: copy (skip link label) -->
+<a class="skip" href="#main">Aller au contenu</a>
+
+<!-- 0. Header -->
 <header class="nav" id="nav">
-  <nav class="nav__left">
-    <a>Approche</a>
-    <a>Formules</a>
-    <a>À propos</a>
-    <a>Ressources</a>
+  <a class="nav__logo" href="#top">Julien Ioset</a>
+  <nav class="nav__links" aria-label="Navigation principale">
+    <a href="#mandats">Mandats</a><span class="nav__sep" aria-hidden="true">·</span>
+    <a href="#julien">Julien</a><span class="nav__sep" aria-hidden="true">·</span>
+    <a href="#contact">Contact</a><span class="nav__sep" aria-hidden="true">·</span>
+    <span lang="fr">FR</span>
   </nav>
-  <a class="nav__logo">Julien Ioset</a>
-  <nav class="nav__right">
-    <a>FR</a>
-    <a>Contact</a>
-  </nav>
+  <!-- TODO: copy (Menu / Fermer) -->
+  <button class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
 </header>
 
-<!-- 1 — Hero -->
-<section class="hero">
-  <img class="hero__img" src="img/hero.jpg" alt="Julien Ioset">
+<div class="drawer" id="drawer" hidden>
+  <button class="drawer__close" type="button">Fermer</button>
+  <nav class="drawer__links" aria-label="Navigation mobile">
+    <a href="#mandats">Mandats</a>
+    <a href="#julien">Julien</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- 1. Hero -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <picture>
+    <source media="(max-width: 639px)" type="image/webp"
+            srcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w" sizes="100vw">
+    <img class="hero__img" src="img/hero-1600.webp"
+         srcset="img/hero-1000.webp 1000w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" sizes="100vw"
+         width="2000" height="1116" fetchpriority="high"
+         alt="Portrait de Julien Ioset en t-shirt noir, adossé à un mur clair">
+  </picture>
   <div class="hero__content">
-    <p class="hero__eyebrow">Stratégie de marque — Direction marketing<br>Suisse romande</p>
-    <h1 class="hero__title">De prix<br>à marque</h1>
-    <p class="hero__text">Stratégie de marque et direction marketing externalisée, pour les dirigeants de PME B2B. Une entreprise choisie pour sa valeur. Jamais comparée sur son prix.</p>
-    <a class="cta">Découvrir l’approche <span class="cta__arrow">↗</span></a>
-  </div>
-  <p class="hero__index">Lausanne — MMXXVI</p>
-</section>
-
-<!-- 2 — Manifeste -->
-<section class="intro wrap">
-  <p class="index">I — L’approche</p>
-  <div class="intro__block">
-    <h2 class="lead">Le savoir-faire ne suffit plus.</h2>
-    <p>Les produits sont maîtrisés. Les clients, connus. Le marché, compris. Pourtant, chaque arbitrage revient au dirigeant&nbsp;: où investir, comment se distinguer, que privilégier.</p>
-    <p>Les initiatives sont multipliées, les budgets engagés. Leur portée, rarement mesurée.</p>
-    <a class="cta">Découvrir l’approche <span class="cta__arrow">↗</span></a>
+    <h1 class="hero__eyebrow" id="hero-title">Stratégie de marque. Direction marketing externalisée.<br>PME de Suisse romande.</h1>
   </div>
 </section>
 
-<!-- 3 — Le problème -->
-<section class="problem wrap">
-  <header class="section-head">
-    <p class="index">II — Le constat</p>
-    <p class="section-head__title">Ce que coûte un marketing sans pilote.</p>
-  </header>
-  <div class="problem__grid">
-    <article>
-      <h3 class="label">Valeur mal reconnue</h3>
-      <p>La différence existe. Elle n’est pas perçue. La conversation est alors ramenée au prix.</p>
-    </article>
-    <article>
-      <h3 class="label">Investissement sans visibilité</h3>
-      <p>Site, campagnes, salons, prestataires. Les dépenses sont accumulées&nbsp;; ce qui porte n’est plus distingué de ce qui pèse.</p>
-    </article>
-    <article>
-      <h3 class="label">Actions sans cohérence</h3>
-      <p>L’offre, la vente et la parole sont menées séparément. Une seule histoire n’est plus racontée.</p>
-    </article>
-  </div>
-  <figure class="problem__img frame">
-    <img src="img/problem.jpg" alt="">
-  </figure>
-  <p class="caption">La précision ne suffit pas. Elle doit être perçue.</p>
+<!-- 2. Threshold (one editable string; alternative noted in the brief) -->
+<section class="threshold" aria-labelledby="threshold-title">
+  <h2 class="lead" id="threshold-title" data-threshold>Ce qui n’est pas perçu se négocie.<br>Ce qui est construit se défend.</h2>
 </section>
 
-<!-- 4 — Formules -->
-<section class="offers wrap">
-  <div class="offers__list">
-    <p class="index">III — Les formules</p>
+<!-- 3. Mandats -->
+<section class="mandats wrap" id="mandats" aria-labelledby="mandats-title">
+  <h2 class="lead" id="mandats-title">Trois formes d’engagement. Une seule exigence&#8239;: la marque.</h2>
+
+  <div class="mandats__grid">
     <article class="offer">
-      <h3 class="label">01 — Conseil stratégique</h3>
-      <p>Un regard extérieur, avant que le temps ou le budget ne soient engagés. Les décisions sont éclairées&nbsp;; les commandes restent entre vos mains.</p>
-      <p class="offer__meta">Deux séances par mois · CHF 2’000 / mois</p>
-      <a class="cta">Réserver un entretien <span class="cta__arrow">↗</span></a>
-    </article>
-    <article class="offer">
-      <h3 class="label">02 — Plan stratégique sur mesure</h3>
-      <p>En six semaines, le positionnement est clarifié, les priorités sont fixées, une feuille de route de douze mois est remise.</p>
-      <p class="offer__meta">Six semaines · CHF 7’500 / mission</p>
-      <a class="cta">Réserver un entretien <span class="cta__arrow">↗</span></a>
-    </article>
-    <article class="offer">
-      <h3 class="label">03 — Direction marketing externalisée</h3>
-      <p>Le cap est tenu. Équipes et agences sont dirigées, chaque action est alignée sur la marge. Sans recrutement.</p>
-      <p class="offer__meta">Quinze heures par mois · CHF 5’000 / mois</p>
-      <a class="cta">Réserver un entretien <span class="cta__arrow">↗</span></a>
-    </article>
-  </div>
-  <figure class="offers__img">
-    <img class="frame" src="img/boat.avif" alt="">
-    <figcaption class="caption">Trois formules. Un seul cap.</figcaption>
-  </figure>
-</section>
-
-<!-- Témoignage -->
-<section class="quote wrap">
-  <blockquote>
-    <p>«&nbsp;Un catalyseur de réflexion sur notre positionnement en tant que marque. Une cohérence bénéfique a été installée dans notre relation client.&nbsp;»</p>
-    <footer class="label">Roxane Piquerez — CEO, Louis Bélet SA</footer>
-  </blockquote>
-</section>
-
-<!-- 5 — Bio & contact -->
-<section class="bio wrap">
-  <figure class="bio__img frame">
-    <img src="img/bio.webp" alt="Julien Ioset">
-  </figure>
-  <div class="bio__content">
-    <p class="index">IV — La maison</p>
-    <h3 class="label">Bio</h3>
-    <p>Dix-sept années ont été consacrées à la vente, au produit et à la direction marketing. De la grande distribution suisse à l’industrie de précision.</p>
-    <p>Une conviction en est née&nbsp;: une stratégie ne se mesure pas au nombre d’actions menées, mais à la justesse des décisions prises.</p>
-
-    <dl class="facts">
-      <div><dt>17 ans</dt><dd>Vente, produit, marketing</dd></div>
-      <div><dt>B2B &amp; B2C</dt><dd>Distribution, industrie</dd></div>
-      <div><dt>Enseignant</dt><dd>Brevet fédéral</dd></div>
-    </dl>
-
-    <p class="bio__res-title">Ressources</p>
-    <ul class="bio__res">
-      <li><a>Témoignages <span>→</span></a></li>
-      <li><a>Cas d’étude <span>→</span></a></li>
-      <li><a>Livre blanc <span>→</span></a></li>
-    </ul>
-
-    <form class="form" onsubmit="return false">
-      <p class="label">Prendre rendez-vous</p>
-      <div class="form__row">
-        <input type="text" placeholder="Prénom">
-        <input type="text" placeholder="Nom">
+      <h3 class="label">I. Conseiller</h3>
+      <p>Un second regard, avant que le budget ne soit engagé.</p>
+      <p class="offer__meta">Deux séances par mois. Jusqu’à six heures. Engagement de deux mois.</p>
+      <p class="offer__price">CHF 2’000 / mois</p>
+      <button class="cta toggle" type="button" aria-expanded="false" aria-controls="details-1">Détails</button>
+      <div class="offer__details" id="details-1" hidden="until-found">
+        <p>Deux rendez-vous de conseil par mois. Un avis indépendant sur les projets et les décisions. Des recommandations remises après chaque séance. L’examen ponctuel des supports et des propositions. Les décisions éclairées ici, les commandes gardées par vous. Pour les dirigeants qui pilotent eux-mêmes leur marketing.</p>
       </div>
-      <input type="text" placeholder="Entreprise">
-      <input type="tel" placeholder="Tél.">
-      <input type="email" placeholder="Email">
-      <textarea rows="3" placeholder="Message"></textarea>
-      <label class="check"><input type="checkbox"> <span>J’accepte la politique de confidentialité et le traitement de mes données.</span></label>
-      <button type="submit">Envoyer</button>
-    </form>
+    </article>
+
+    <article class="offer">
+      <h3 class="label">II. Planifier</h3>
+      <p>Six semaines. Un positionnement clarifié, des priorités arrêtées, douze mois écrits.</p>
+      <p class="offer__meta">Six séances. Jusqu’à vingt-trois heures. Mission de six semaines.</p>
+      <p class="offer__price">CHF 7’500 / mission</p>
+      <button class="cta toggle" type="button" aria-expanded="false" aria-controls="details-2">Détails</button>
+      <div class="offer__details" id="details-2" hidden="until-found">
+        <p>L’offre, le positionnement et les actions sont analysés. Une proposition de valeur et des messages différenciants sont formulés. Une feuille de route sur douze mois est établie, priorités comprises. Le plan est remis prêt à l’emploi, à vos équipes ou à vos agences. Aucune prestation n’est vendue en aval.</p>
+      </div>
+    </article>
+
+    <article class="offer">
+      <h3 class="label">III. Diriger</h3>
+      <p>Le marketing se dirige. Il ne se subit pas.</p>
+      <p class="offer__meta">Jusqu’à quinze heures par mois. Engagement de trois mois.</p>
+      <p class="offer__price">CHF 5’000 / mois</p>
+      <button class="cta toggle" type="button" aria-expanded="false" aria-controls="details-3">Détails</button>
+      <div class="offer__details" id="details-3" hidden="until-found">
+        <p>La feuille de route est tenue à jour. Les priorités sont fixées, les arbitrages rendus. Équipes et agences sont briefées, puis supervisées. Un bilan des résultats est présenté chaque mois. Le cap est tenu ici. L’exécution reste chez ceux qui la réalisent.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="mandats__foot">
+    <p class="offer__meta">TVA non applicable.</p>
+    <p>Tout commence par un entretien de trente minutes. <a class="cta" href="https://meetings-eu1.hubspot.com/julien-ioset" target="_blank" rel="noopener">Réserver <span class="cta__arrow" aria-hidden="true">↗</span></a></p>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer__grid">
-    <div class="footer__col footer__col--first">
-      <p class="footer__k">Langue&nbsp;:</p>
-      <p>Français</p>
-      <p class="footer__k footer__gap">Région&nbsp;:</p>
-      <p>Suisse romande</p>
-    </div>
-    <div class="footer__col">
-      <a>Services</a>
-      <a>À propos</a>
-      <a>Insights</a>
-      <a>CEO Marketing</a>
-    </div>
-    <div class="footer__col">
-      <p>Case postale</p>
-      <p>1000 Lausanne 12</p>
-      <a>+41 78 913 80 08</a>
-      <a>j.ioset@julienioset.ch</a>
-    </div>
-    <div class="footer__col">
-      <a>Politique de confidentialité</a>
-      <a>Conditions générales</a>
-      <p>Site sans cookies</p>
-    </div>
-    <div class="footer__col footer__news">
-      <p class="footer__k">Rester informé</p>
-      <form class="footer__field" onsubmit="return false">
-        <input type="email" placeholder="Adresse e-mail">
-        <button type="submit" aria-label="S’inscrire">&gt;</button>
-      </form>
-      <label class="check"><input type="checkbox"> <span>J’accepte la <u>politique de confidentialité</u>.</span></label>
-    </div>
+<!-- 4. Cartel -->
+<section class="cartel wrap" id="julien" aria-labelledby="julien-title">
+  <figure class="cartel__img frame">
+    <img src="img/bio-1122.webp" srcset="img/bio-560.webp 560w, img/bio-1122.webp 1122w"
+         sizes="(max-width: 900px) 100vw, 420px" width="1122" height="1402" loading="lazy" decoding="async"
+         alt="Julien Ioset assis au sol, la main tendue vers l’objectif">
+  </figure>
+  <div class="cartel__text">
+    <h2 class="label" id="julien-title">Julien Ioset</h2>
+    <p>Dix-sept ans entre la vente, la gestion de produits et la direction marketing, de la grande distribution suisse à l’industrie de précision.</p>
+    <p>Une stratégie ne se mesure pas au nombre d’actions menées. Elle se mesure à la qualité des décisions prises.</p>
+    <p class="caption">Vente, produit, marketing · B2B &amp; B2C · Distribution et industrie · Enseignant au Brevet fédéral Marketing et Vente</p>
+    <a class="cta" href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn <span class="cta__arrow" aria-hidden="true">↗</span></a>
   </div>
-  <p class="footer__philo">Le prix est un signal. La cohérence en est l’origine.</p>
-  <p class="footer__copy">Julien Ioset Consulting © 2026</p>
+</section>
+
+<!-- 5. Sur demande -->
+<section class="ondemand wrap" aria-labelledby="ondemand-title">
+  <h2 class="lead" id="ondemand-title">Deux études de cas sont transmises sur demande.</h2>
+  <p class="offer__meta">Industrie de précision · Grande distribution</p>
+  <button class="cta" type="button" id="case-open" aria-haspopup="dialog" aria-controls="case-dialog">Demander une étude de cas</button>
+</section>
+
+<dialog class="dialog" id="case-dialog" aria-labelledby="case-title">
+  <!-- TODO: copy (Fermer) -->
+  <button class="dialog__close" type="button" data-close>Fermer</button>
+  <form class="form" id="case-form" novalidate>
+    <p class="lead" id="case-title">L’étude de cas vous est adressée personnellement.</p>
+    <div class="field">
+      <input type="email" name="email" id="case-email" required autocomplete="email"
+             placeholder="Adresse e-mail professionnelle" aria-label="Adresse e-mail professionnelle" aria-describedby="case-email-err">
+      <p class="field__err" id="case-email-err" aria-live="polite"></p>
+    </div>
+    <label class="check"><input type="checkbox" name="newsletter"> <span>Recevoir aussi la newsletter.</span></label>
+    <button type="submit">Recevoir</button>
+    <p class="caption">En cliquant, vous acceptez notre <a href="/privacy-policy/"><u>politique de confidentialité</u></a>.</p>
+  </form>
+  <!-- TODO: copy (success sentence) -->
+  <p class="lead dialog__done" hidden tabindex="-1">[TODO: copy]</p>
+</dialog>
+
+<!-- 6. Contact -->
+<section class="contact wrap" id="contact" aria-labelledby="contact-title">
+  <figure class="contact__img frame">
+    <!-- TODO: image chosen by Julien (existing boat photo used as stand-in) -->
+    <img src="img/boat-618.webp" srcset="img/boat-400.webp 400w, img/boat-618.webp 618w"
+         sizes="(max-width: 900px) 100vw, 340px" width="618" height="1024" loading="lazy" decoding="async"
+         alt="Aviron vu du ciel sur une eau sombre">
+  </figure>
+  <div class="contact__text">
+    <h2 class="lead" id="contact-title">Un entretien. Trente minutes.</h2>
+    <p>Ni présentation, ni engagement. Une conversation.</p>
+    <p class="contact__ways"><a class="cta" href="https://meetings-eu1.hubspot.com/julien-ioset" target="_blank" rel="noopener">Réserver un créneau <span class="cta__arrow" aria-hidden="true">↗</span></a> <span>· ou écrire&#8239;:</span></p>
+
+    <form class="form" id="contact-form" novalidate>
+      <div class="field">
+        <input type="text" name="nom" id="c-nom" required autocomplete="name" placeholder="Nom" aria-label="Nom" aria-describedby="c-nom-err">
+        <p class="field__err" id="c-nom-err" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <input type="text" name="entreprise" id="c-ent" required autocomplete="organization" placeholder="Entreprise" aria-label="Entreprise" aria-describedby="c-ent-err">
+        <p class="field__err" id="c-ent-err" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <input type="email" name="email" id="c-mail" required autocomplete="email" placeholder="E-mail" aria-label="E-mail" aria-describedby="c-mail-err">
+        <p class="field__err" id="c-mail-err" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <textarea name="situation" id="c-sit" rows="3" required placeholder="Votre situation, en quelques lignes" aria-label="Votre situation, en quelques lignes" aria-describedby="c-sit-err"></textarea>
+        <p class="field__err" id="c-sit-err" aria-live="polite"></p>
+      </div>
+      <!-- Honeypot -->
+      <div class="hp" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit">Envoyer</button>
+      <!-- TODO: copy (success sentence) -->
+      <p class="lead form__done" hidden tabindex="-1">[TODO: copy]</p>
+    </form>
+    <p class="contact__mail"><a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- 7. Footer -->
+<footer class="footer">
+  <p class="footer__statement">Le prix est un signal. La cohérence en est l’origine.</p>
+  <p class="footer__philo">Lorsque l’histoire, l’image et l’expérience sont maintenues avec exigence, la valeur cesse d’être expliquée. Elle se perçoit.</p>
+  <nav class="footer__links" aria-label="Liens secondaires">
+    <a href="/insights/">Insights</a><span aria-hidden="true">·</span>
+    <!-- TODO: confirm URL with Julien -->
+    <a href="#">Questions fréquentes</a><span aria-hidden="true">·</span>
+    <a href="https://ceomarketing.ch/" target="_blank" rel="noopener">CEO Marketing</a><span aria-hidden="true">·</span>
+    <a href="/conditions-generales/">Conditions générales</a><span aria-hidden="true">·</span>
+    <a href="/privacy-policy/">Confidentialité</a><span aria-hidden="true">·</span>
+    <a href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn</a>
+  </nav>
+  <p class="footer__line">Case postale, 1000 Lausanne 12 · <a href="tel:+41789138008">+41 78 913 80 08</a> · <a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a></p>
+  <p class="footer__copy">© 2026 Julien Ioset · Site sans cookies</p>
 </footer>
 
-<script>
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('nav--solid', scrollY > 40);
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
-
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { threshold: .15 });
-  document.querySelectorAll('.intro__block, .section-head, .problem article, .problem__img, .offer, .offers__img, .quote blockquote, .bio__img, .bio__content')
-    .forEach(el => { el.classList.add('reveal'); io.observe(el); });
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>

@@ -61,7 +61,7 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 
 1. Contact section is full width: photo fills the left half at full height, text and a wider form (about 540px) on the right.
 2. Footer uses The Row's layout: language/region column with a vertical divider, three link/address columns, philosophy statement in the right-hand column (where The Row has its newsletter), centred copyright below. "Site sans cookies" moved into the legal column.
-3. Bio portrait denoised (light median filter + gentle sharpen), B&W, same framing. Polished master: `site/img/cartel-master.webp`.
+3. Bio portrait: replaced by Julien's full-HD version (1601 × 2000, B&W, no retouching needed). Source `site/img/cartel-source.jpg`; page uses `cartel-560/1122/1600.webp`.
 4. Threshold: "La rentabilité commence là où la comparaison s’arrête." (Julien typed "là ou"; corrected to "là où", to confirm.)
 5. Hero: "De prix à marque." added under the h1, same 12px style.
 6. Menu: 12px, not uppercase, 44px between items, separator dots removed, globe icon before "FR" (also in the mobile drawer). The logo stays uppercase.

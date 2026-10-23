@@ -76,8 +76,6 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 - Footer right column: newsletter form like The Row: label "Rester informé", email field with underline and `>` submit, consent checkbox "J’accepte la politique de confidentialité." (link to `/privacy-policy/`). Both fields required, inline errors, goes through `submitLead('newsletter')`. Success sentence `[TODO: copy]`.
 - The philosophy statement ("Le prix est un signal…" and "Lorsque l’histoire…") was removed from the footer at Julien's request.
 
-Hero photo: new wall portrait (Oct 23), B&W. Source `site/img/hero-source.jpg`; desktop `hero-1000/1600/2000.webp`; mobile crop `hero-m-480/720.webp` (720 × 1116 crop starting at x = 710).
-
 Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias Tigiser), B&W, `site/img/rowing-600/1000/1500.webp`. The globe "FR" is a button with no language menu yet (only French exists).
 
 ## 8. Open TODOs (from BRIEF.md, still waiting on Julien)

@@ -118,13 +118,12 @@ p + p { margin-top: 1.1em; }
 
 /* 1. Hero */
 .hero { position: relative; height: 100vh; min-height: 640px; overflow: hidden; background: #ececec; }
-.hero__img { position: absolute; inset: 0; object-position: 58% 30%; animation: settle 2.4s var(--ease) both; }
+.hero__img { position: absolute; inset: 0; object-position: 58% 30%; }
 .hero__content {
   position: relative; z-index: 2;
   height: 100%; display: flex; flex-direction: column; justify-content: center;
   padding-left: clamp(16px, 4.5vw, 64px);
   max-width: 500px; box-sizing: content-box;
-  animation: rise 1.6s .3s var(--ease) both;
 }
 .hero__eyebrow { font-size: 12px; font-weight: 500; letter-spacing: .03em; }
 
@@ -155,11 +154,7 @@ p + p { margin-top: 1.1em; }
 .cartel__img img { object-position: center 20%; }
 .cartel__text { max-width: 340px; }
 
-/* Images: slow settle on reveal */
 .frame { overflow: hidden; }
-.frame img { transition: transform 2.2s var(--ease); }
-.reveal.frame img { transform: scale(1.045); }
-.reveal.in.frame img { transform: none; }
 
 /* 5. Sur demande */
 .ondemand {
@@ -228,15 +223,9 @@ p + p { margin-top: 1.1em; }
 .footer__line { margin-top: 14px !important; color: var(--mute); }
 .footer__copy { margin-top: 10px !important; font-size: 10px; color: var(--mute); }
 
-/* Motion */
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
-@keyframes settle { from { transform: scale(1.04); } }
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 1.3s ease, transform 1.3s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
+  *, *::before, *::after { transition: none !important; }
 }
 
 /* Responsive */

@@ -116,10 +116,3 @@ contactForm.addEventListener('submit', async e => {
     contactDone.focus();
   }
 });
-
-// Reveal on scroll (existing motion)
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-}), { threshold: .15 });
-document.querySelectorAll('.mandats > .lead, .offer, .mandats__foot, .cartel__img, .cartel__text, .ondemand, .contact__img, .contact__text')
-  .forEach(el => { el.classList.add('reveal'); io.observe(el); });

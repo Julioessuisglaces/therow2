@@ -37,7 +37,7 @@ Then open http://localhost:5173. No build step, no dependencies. Plain HTML, CSS
 
 ## 5. Page structure today (follows BRIEF.md section 3)
 
-0. Fixed header: "Julien Ioset" left; Mandats · Julien · Contact · FR right. Below 900px: "Menu" opens a full-screen drawer.
+0. Fixed header: "Julien Ioset" left; Mandats, Julien, Contact, globe + FR right. Below 900px: "Menu" opens a full-screen drawer.
 1. Hero `#top`: full-bleed portrait (`<picture>` with a separate mobile crop) + role line as the only `h1`.
 2. Threshold: one full empty screen with one line of text (`h2`).
 3. Mandats `#mandats`: intro line, three offers (I. Conseiller, II. Planifier, III. Diriger), each with a "Détails" toggle (`hidden="until-found"`, independent), then "TVA non applicable." and the booking line.
@@ -55,21 +55,21 @@ Fixed values: HubSpot `https://meetings-eu1.hubspot.com/julien-ioset` · email `
 - Best practices 96 is only the missing `favicon.ico` on the local server.
 - Keyboard tested: toggles, modal (focus trap, Escape, focus return), inline email validation, contact form validation.
 
-## 7. NEXT: change requests from Julien, not done yet
+## 7. Change round 2 (done, Oct 2026)
 
-Do these next, in this order. Copy in quotes is verbatim (apply French typography: `’` apostrophe, narrow no-break space `&#8239;` before `:`).
+All applied and committed. Copy changes override the locked copy in BRIEF.md.
 
-1. **Contact section full width.** The image is powerful and the form is too narrow. Make section 6 span the full page width (not the 1140px container), image large on one half, form wider on the other.
-2. **Footer exactly like The Row** (https://www.therow.com/fr-ch): multi-column footer layout as on therow.com (left column with language/country and a vertical divider, then link columns, newsletter field on the right with underline and `>` submit, centred copyright line below). Keep the footer content from BRIEF.md section 4 / 7.
-3. **Bio portrait quality.** The source photo (`Minimalist Corporate Portrait with Smartwatch`, now `site/img/cartel-560.webp` and `cartel-1122.webp`) is grainy. Polish it: denoise / reduce grain, keep it natural and B&W. Do not change the framing.
-4. **Threshold copy.** Replace
-   "Ce qui n’est pas perçu se négocie. / Ce qui est construit se défend."
-   with **"La rentabilité commence là où la comparaison s’arrête."** (Julien wrote "là ou" and "s'arrête"; use the correct French "là où" and the typographic apostrophe, and confirm with him.)
-5. **Hero.** Add **"De prix à marque."** a little below the h1 (keep the h1 as is).
-6. **Menu.** More space between items and **not uppercase**. Add an **Earth / globe icon** for the language selector (next to FR).
-7. **Mandats intro.** Replace "Trois formes d’engagement. Une seule exigence&#8239;: la marque." with **"Trois services. Une seule exigence&#8239;: la marque."**
-8. **Booking CTA position.** In "Tout commence par un entretien de trente minutes. Réserver ↗", put **"Réserver ↗" on its own line, underneath the text**.
-9. **Sur demande.** Replace "Deux études de cas sont transmises sur demande." with **"Études de cas transmises sur demande."** (Julien wrote "Etudes de cas sont transmises sur demande." Capital É is correct French; "Les études de cas sont transmises sur demande." is the grammatical full sentence. Confirm wording with Julien.)
+1. Contact section is full width: photo fills the left half at full height, text and a wider form (about 540px) on the right.
+2. Footer uses The Row's layout: language/region column with a vertical divider, three link/address columns, philosophy statement in the right-hand column (where The Row has its newsletter), centred copyright below. "Site sans cookies" moved into the legal column.
+3. Bio portrait denoised (light median filter + gentle sharpen), B&W, same framing. Polished master: `site/img/cartel-master.webp`.
+4. Threshold: "La rentabilité commence là où la comparaison s’arrête." (Julien typed "là ou"; corrected to "là où", to confirm.)
+5. Hero: "De prix à marque." added under the h1, same 12px style.
+6. Menu: 12px, not uppercase, 44px between items, separator dots removed, globe icon before "FR" (also in the mobile drawer). The logo stays uppercase.
+7. Mandats intro: "Trois services. Une seule exigence&#8239;: la marque."
+8. "Réserver ↗" now sits on its own line under "Tout commence par un entretien de trente minutes."
+9. Sur demande: "Les études de cas sont transmises sur demande." (Julien typed "Etudes de cas sont transmises sur demande."; "Les" added for grammar, to confirm.)
+
+Possible follow-ups: the contact photo (boat, 618px wide source) is shown at half-screen width, so it is upscaled; a larger file or Julien's chosen image would be sharper. The globe "FR" is a button with no language menu yet (only French exists).
 
 ## 8. Open TODOs (from BRIEF.md, still waiting on Julien)
 
@@ -96,3 +96,4 @@ Do these next, in this order. Copy in quotes is verbatim (apply French typograph
 
 - `draft-v1` tag: first multi-section mockup (Archivo, then Raleway, The Row atmosphere).
 - Then: rebuilt as the one-page layout from `BRIEF.md`, animations removed, new bio portrait.
+- Then: change round 2 (section 7 above).

@@ -71,10 +71,15 @@
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top">Julien Ioset</a>
   <nav class="nav__links" aria-label="Navigation principale">
-    <a href="#mandats">Mandats</a><span class="nav__sep" aria-hidden="true">·</span>
-    <a href="#julien">Julien</a><span class="nav__sep" aria-hidden="true">·</span>
-    <a href="#contact">Contact</a><span class="nav__sep" aria-hidden="true">·</span>
-    <span lang="fr">FR</span>
+    <a href="#mandats">Mandats</a>
+    <a href="#julien">Julien</a>
+    <a href="#contact">Contact</a>
+    <button class="lang" type="button" aria-label="FR, langue&#8239;: français">
+      <svg class="lang__icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
+        <circle cx="8" cy="8" r="7"/><ellipse cx="8" cy="8" rx="3" ry="7"/><path d="M1 8h14M2.2 4.5h11.6M2.2 11.5h11.6"/>
+      </svg>
+      <span>FR</span>
+    </button>
   </nav>
   <!-- TODO: copy (Menu / Fermer) -->
   <button class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
@@ -86,6 +91,12 @@
     <a href="#mandats">Mandats</a>
     <a href="#julien">Julien</a>
     <a href="#contact">Contact</a>
+    <button class="lang" type="button" aria-label="FR, langue&#8239;: français">
+      <svg class="lang__icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
+        <circle cx="8" cy="8" r="7"/><ellipse cx="8" cy="8" rx="3" ry="7"/><path d="M1 8h14M2.2 4.5h11.6M2.2 11.5h11.6"/>
+      </svg>
+      <span>FR</span>
+    </button>
   </nav>
 </div>
 
@@ -103,17 +114,18 @@
   </picture>
   <div class="hero__content">
     <h1 class="hero__eyebrow" id="hero-title">Stratégie de marque. Direction marketing externalisée.<br>PME de Suisse romande.</h1>
+    <p class="hero__sub">De prix à marque.</p>
   </div>
 </section>
 
-<!-- 2. Threshold (one editable string; alternative noted in the brief) -->
+<!-- 2. Threshold (one editable string) -->
 <section class="threshold" aria-labelledby="threshold-title">
-  <h2 class="lead" id="threshold-title" data-threshold>Ce qui n’est pas perçu se négocie.<br>Ce qui est construit se défend.</h2>
+  <h2 class="lead" id="threshold-title" data-threshold>La rentabilité commence là où la comparaison s’arrête.</h2>
 </section>
 
 <!-- 3. Mandats -->
 <section class="mandats wrap" id="mandats" aria-labelledby="mandats-title">
-  <h2 class="lead" id="mandats-title">Trois formes d’engagement. Une seule exigence&#8239;: la marque.</h2>
+  <h2 class="lead" id="mandats-title">Trois services. Une seule exigence&#8239;: la marque.</h2>
 
   <div class="mandats__grid">
     <article class="offer">
@@ -152,7 +164,8 @@
 
   <div class="mandats__foot">
     <p class="offer__meta">TVA non applicable.</p>
-    <p>Tout commence par un entretien de trente minutes. <a class="cta" href="https://meetings-eu1.hubspot.com/julien-ioset" target="_blank" rel="noopener">Réserver <span class="cta__arrow" aria-hidden="true">↗</span></a></p>
+    <p>Tout commence par un entretien de trente minutes.</p>
+    <a class="cta" href="https://meetings-eu1.hubspot.com/julien-ioset" target="_blank" rel="noopener">Réserver <span class="cta__arrow" aria-hidden="true">↗</span></a>
   </div>
 </section>
 
@@ -174,7 +187,7 @@
 
 <!-- 5. Sur demande -->
 <section class="ondemand wrap" aria-labelledby="ondemand-title">
-  <h2 class="lead" id="ondemand-title">Deux études de cas sont transmises sur demande.</h2>
+  <h2 class="lead" id="ondemand-title">Les études de cas sont transmises sur demande.</h2>
   <p class="offer__meta">Industrie de précision · Grande distribution</p>
   <button class="cta" type="button" id="case-open" aria-haspopup="dialog" aria-controls="case-dialog">Demander une étude de cas</button>
 </section>
@@ -198,11 +211,11 @@
 </dialog>
 
 <!-- 6. Contact -->
-<section class="contact wrap" id="contact" aria-labelledby="contact-title">
+<section class="contact" id="contact" aria-labelledby="contact-title">
   <figure class="contact__img frame">
     <!-- TODO: image chosen by Julien (existing boat photo used as stand-in) -->
     <img src="img/boat-618.webp" srcset="img/boat-400.webp 400w, img/boat-618.webp 618w"
-         sizes="(max-width: 900px) 100vw, 340px" width="618" height="1024" loading="lazy" decoding="async"
+         sizes="(max-width: 900px) 100vw, 50vw" width="618" height="1024" loading="lazy" decoding="async"
          alt="Aviron vu du ciel sur une eau sombre">
   </figure>
   <div class="contact__text">
@@ -243,19 +256,37 @@
 
 <!-- 7. Footer -->
 <footer class="footer">
-  <p class="footer__statement">Le prix est un signal. La cohérence en est l’origine.</p>
-  <p class="footer__philo">Lorsque l’histoire, l’image et l’expérience sont maintenues avec exigence, la valeur cesse d’être expliquée. Elle se perçoit.</p>
-  <nav class="footer__links" aria-label="Liens secondaires">
-    <a href="/insights/">Insights</a><span aria-hidden="true">·</span>
-    <!-- TODO: confirm URL with Julien -->
-    <a href="#">Questions fréquentes</a><span aria-hidden="true">·</span>
-    <a href="https://ceomarketing.ch/" target="_blank" rel="noopener">CEO Marketing</a><span aria-hidden="true">·</span>
-    <a href="/conditions-generales/">Conditions générales</a><span aria-hidden="true">·</span>
-    <a href="/privacy-policy/">Confidentialité</a><span aria-hidden="true">·</span>
-    <a href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn</a>
-  </nav>
-  <p class="footer__line">Case postale, 1000 Lausanne 12 · <a href="tel:+41789138008">+41 78 913 80 08</a> · <a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a></p>
-  <p class="footer__copy">© 2026 Julien Ioset · Site sans cookies</p>
+  <div class="footer__grid">
+    <div class="footer__col footer__col--first">
+      <p class="footer__k">Langue&#8239;:</p>
+      <p>Français</p>
+      <p class="footer__k footer__gap">Région&#8239;:</p>
+      <p>Suisse romande</p>
+    </div>
+    <nav class="footer__col" aria-label="Ressources">
+      <a href="/insights/">Insights</a>
+      <!-- TODO: confirm URL with Julien -->
+      <a href="#">Questions fréquentes</a>
+      <a href="https://ceomarketing.ch/" target="_blank" rel="noopener">CEO Marketing</a>
+      <a href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <nav class="footer__col" aria-label="Informations légales">
+      <a href="/conditions-generales/">Conditions générales</a>
+      <a href="/privacy-policy/">Confidentialité</a>
+      <p>Site sans cookies</p>
+    </nav>
+    <div class="footer__col">
+      <p>Case postale</p>
+      <p>1000 Lausanne 12</p>
+      <a href="tel:+41789138008">+41 78 913 80 08</a>
+      <a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a>
+    </div>
+    <div class="footer__col footer__philo">
+      <p class="footer__k">Le prix est un signal. La cohérence en est l’origine.</p>
+      <p>Lorsque l’histoire, l’image et l’expérience sont maintenues avec exigence, la valeur cesse d’être expliquée. Elle se perçoit.</p>
+    </div>
+  </div>
+  <p class="footer__copy">© 2026 Julien Ioset</p>
 </footer>
 
 <script src="main.js" defer></script>

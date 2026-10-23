@@ -76,14 +76,13 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 - Footer right column: newsletter form like The Row: label "Rester informé", email field with underline and `>` submit, consent checkbox "J’accepte la politique de confidentialité." (link to `/privacy-policy/`). Both fields required, inline errors, goes through `submitLead('newsletter')`. Success sentence `[TODO: copy]`.
 - The philosophy statement moved to a centred block above the copyright.
 
-Possible follow-ups: the contact photo (boat, 618px wide source) is shown at half-screen width, so it is upscaled; a larger file or Julien's chosen image would be sharper. The globe "FR" is a button with no language menu yet (only French exists).
+Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias Tigiser), B&W, `site/img/rowing-600/1000/1500.webp`. The globe "FR" is a button with no language menu yet (only French exists).
 
 ## 8. Open TODOs (from BRIEF.md, still waiting on Julien)
 
 - Meta description (`[TODO: Julien to validate]` in `<head>`).
 - Success sentences after sending the case-study modal and the contact form (`[TODO: copy]`).
 - URL of "Questions fréquentes" (footer link is `#`).
-- Contact image: the rowing-boat photo is a stand-in until Julien chooses.
 - Form endpoint: `submitLead()` in `site/main.js` only logs; no real handler exists.
 - Production URL of the portrait used in `og:image`.
 - Labels added beyond the locked copy, to approve: "Aller au contenu" (skip link), "Menu", "Fermer".

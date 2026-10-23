@@ -270,7 +270,7 @@ p + p { margin-top: 1.1em; }
   .mandats { min-height: 0; }
   .cartel, .contact { grid-template-columns: 1fr; gap: 56px; min-height: 0; }
   .contact { gap: 0; }
-  .contact__img { min-height: 0; aspect-ratio: 618 / 1024; max-height: 80vh; }
+  .contact__img { min-height: 0; aspect-ratio: 2 / 3; max-height: 80vh; }
   .contact__text { max-width: none; padding: 56px 16px var(--space); }
   .dialog { padding: 56px 16px 32px; }
   .footer { padding: 48px 16px 32px; }

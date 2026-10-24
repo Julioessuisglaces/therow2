@@ -28,46 +28,17 @@ drawer.querySelector('.drawer__close').addEventListener('click', () => closeDraw
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeDrawer(false)));
 drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-// Threshold: while the stage is pinned, two hairlines converge on the centre and
-// six word groups are revealed in turn: "Le marketing." + "C’est vulgaire." on
-// one line, which then gives way to "Construisez plutôt une marque." + "Forte." +
-// "Éthique." + "Incomparable." on the second line, which stays.
-// Each reveal has its own stretch of scroll. MIN_GAP can space reveals in time
-// (e.g. 550 ms) so a hard scroll shows them one by one; 0 = follow the scroll.
+// Threshold: while the text is pinned, two hairlines converge on it from the
+// screen edges, slow down and stop short of it (complete at 80% of the track).
 const threshold = document.querySelector('.threshold');
-const [line1, line2] = threshold.querySelectorAll('.threshold__step');
-const parts1 = line1.querySelectorAll('.threshold__part');
-const parts2 = line2.querySelectorAll('.threshold__part');
-const STATES = parts1.length + parts2.length;  // 6 reveals
-const FIRST = 0.04, STRETCH = 0.13;            // share of the track per reveal
-const MIN_GAP = 0;
-let state = 0, target = 0, lastStep = 0, timer = null, frame = 0;
-const render = () => {
-  line1.classList.toggle('is-on', state >= 1 && state <= parts1.length);
-  parts1.forEach((p, j) => p.classList.toggle('is-on', state >= 1 + j));
-  line2.classList.toggle('is-on', state > parts1.length);
-  parts2.forEach((p, j) => p.classList.toggle('is-on', state >= parts1.length + 1 + j));
-};
-const step = () => {
-  timer = null;
-  if (state === target) return;
-  const wait = MIN_GAP - (performance.now() - lastStep);
-  if (wait > 0) { timer = setTimeout(step, wait); return; }
-  state += target > state ? 1 : -1;
-  lastStep = performance.now();
-  render();
-  if (state !== target) timer = setTimeout(step, MIN_GAP);
-};
+let frame = 0;
 const drawLines = () => {
   frame = 0;
   const r = threshold.getBoundingClientRect();
-  const t = Math.min(1, Math.max(0, -r.top / (0.9 * (r.height - innerHeight))));
-  threshold.style.setProperty('--p', (1 - (1 - t) ** 2).toFixed(4)); // ease-out
-  target = t < FIRST ? 0 : Math.min(STATES, 1 + Math.floor((t - FIRST) / STRETCH));
-  if (!timer) step();
+  const t = Math.min(1, Math.max(0, -r.top / (0.8 * (r.height - innerHeight))));
+  threshold.style.setProperty('--p', (1 - (1 - t) ** 3).toFixed(4)); // ease-out
 };
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.documentElement.classList.add('js-threshold');
   addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(drawLines); }, { passive: true });
   addEventListener('resize', drawLines);
   drawLines();

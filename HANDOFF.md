@@ -104,15 +104,13 @@ Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias T
 - Then: rebuilt as the one-page layout from `BRIEF.md`, animations removed, new bio portrait.
 - Then: change round 2 (section 7 above).
 
-## 11. Threshold: converging hairlines + word sequence (Julien's choice)
+## 11. Threshold: converging hairlines + two static lines (Julien's choice)
 
-Tried and removed: a black/white strobe, and the sentence "La rentabilité commence là où la comparaison s’arrête." (Julien removed it completely; the brief's threshold copy is superseded).
+Tried and removed: a black/white strobe; the sentence "La rentabilité commence là où la comparaison s’arrête."; a scroll-driven word-by-word sequence. Julien chose maximum sobriety.
 
-Now: `.threshold` is a 400vh scroll track with a sticky 100vh stage. While pinned, two 1px lines (`--soft`) grow from the screen edges towards the centre (ease-out, complete at 90% of the track), and the text builds in two lines at the same spot:
-1. "Le marketing." then "C’est vulgaire." joins it on the same line; the line then gives way to
-2. "Construisez plutôt une marque." then "Forte." then "Éthique." then "Incomparable." join it one by one; this line stays (it is the section `h2`).
-
-Six reveals, each on its own stretch of scroll (`FIRST`/`STRETCH` in `docs/main.js`), 0.45 s opacity fades. `MIN_GAP` (currently 0) can space reveals in time so a hard scroll shows them one by one; Julien preferred 0. With `prefers-reduced-motion` or no JS, the full second line and the lines are shown directly. This is the only animation on the page; keep it that way.
+Now: `.threshold` is a 200vh scroll track with a sticky 100vh stage holding the `h2`, two lines one above the other, regular weight (400), 13px, no text effect:
+"Le marketing c’est vulgaire." / "Devenez une évidence en créant du sens."
+While pinned, two 1px lines (`--soft`) grow from the screen edges and stop 32px from the text (ease-out, complete at 80% of the track; `drawLines` in `docs/main.js`). With `prefers-reduced-motion` the lines are simply shown. This is the only animation on the page; keep it that way.
 
 ## 12. Online preview (GitHub Pages)
 

@@ -28,18 +28,31 @@ drawer.querySelector('.drawer__close').addEventListener('click', () => closeDraw
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeDrawer(false)));
 drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-// Threshold: two hairlines converge on the sentence as the section scrolls in,
-// slowing down and stopping short of it. Drawn while the sentence is pinned,
-// complete at 80% of the pinned track.
+// Threshold: while the stage is pinned, two hairlines converge on the centre and
+// four short phrases appear one after another ("Le marketing", "c’est vulgaire.",
+// "Construisez plutôt", "une marque."), each fading in and out, before the final
+// sentence (the h2) appears and stays. Everything completes at 90% of the track.
 const threshold = document.querySelector('.threshold');
+const steps = [...threshold.querySelectorAll('.threshold__step')];
+const WINDOW = 0.18;                      // share of the track per phrase
+const fade = (x, a, b) => Math.min(1, Math.max(0, (x - a) / (b - a)));
 let frame = 0;
 const drawLines = () => {
   frame = 0;
   const r = threshold.getBoundingClientRect();
-  const t = Math.min(1, Math.max(0, -r.top / (0.8 * (r.height - innerHeight))));
-  threshold.style.setProperty('--p', (1 - (1 - t) ** 3).toFixed(4)); // ease-out
+  const t = Math.min(1, Math.max(0, -r.top / (0.9 * (r.height - innerHeight))));
+  threshold.style.setProperty('--p', (1 - (1 - t) ** 2).toFixed(4)); // ease-out
+  steps.forEach((el, i) => {
+    const a = i * WINDOW, b = a + WINDOW, edge = WINDOW * 0.25;
+    const last = i === steps.length - 1;
+    const o = last
+      ? fade(t, a, a + edge)                                  // final sentence stays
+      : Math.min(fade(t, a, a + edge), 1 - fade(t, b - edge, b));
+    el.style.opacity = o.toFixed(3);
+  });
 };
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('js-threshold');
   addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(drawLines); }, { passive: true });
   addEventListener('resize', drawLines);
   drawLines();

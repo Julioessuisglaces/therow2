@@ -132,12 +132,16 @@ p + p { margin-top: 1.1em; }
 /* 2. Threshold */
 /* Tall scroll track; the stage stays pinned while two hairlines converge
    on the sentence and stop short of it (--p set from scroll in main.js) */
-.threshold { height: 200vh; position: relative; --p: 0; }
+.threshold { height: 500vh; position: relative; --p: 0; }
 .threshold__stage {
   position: sticky; top: 0; height: 100vh;
   display: flex; align-items: center; gap: 32px; text-align: center;
 }
-.threshold .lead { margin: 0; flex: 0 1 auto; max-width: 70%; }
+/* All phrases share one spot; main.js fades them in and out in turn */
+.threshold__words { display: grid; flex: 0 1 auto; max-width: 70%; }
+.threshold__step { grid-area: 1 / 1; margin: 0; opacity: 0; }
+.threshold h2.threshold__step { opacity: 1; }
+.js-threshold .threshold h2.threshold__step { opacity: 0; }
 .threshold__line { flex: 1; height: 1px; background: var(--soft); transform: scaleX(var(--p)); }
 .threshold__line--left { transform-origin: left; }
 .threshold__line--right { transform-origin: right; }

@@ -18,10 +18,10 @@ Then open http://localhost:5173. No build step, no dependencies. Plain HTML, CSS
 
 | Path | Role |
 |---|---|
-| `site/index.html` | The whole page: header, 6 sections, footer, SEO head, JSON-LD |
-| `site/style.css` | All styles. Design tokens on `:root` |
-| `site/main.js` | Mobile menu drawer, "Détails" toggles, case-study `<dialog>`, contact form validation, `submitLead()` stub |
-| `site/img/` | Images. Responsive `.webp` sizes are used by the page; the original `.jpg/.webp/.avif` files are kept as sources |
+| `docs/index.html` | The whole page: header, 6 sections, footer, SEO head, JSON-LD |
+| `docs/style.css` | All styles. Design tokens on `:root` |
+| `docs/main.js` | Mobile menu drawer, "Détails" toggles, case-study `<dialog>`, contact form validation, `submitLead()` stub |
+| `docs/img/` | Images. Responsive `.webp` sizes are used by the page; the original `.jpg/.webp/.avif` files are kept as sources |
 | `server.js` | Tiny static server on port 5173 |
 | `BRIEF.md` | Julien's build brief (layout, locked copy, behaviour, guardrails). **Authoritative.** |
 | `HANDOFF.md` | This file |
@@ -61,7 +61,7 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 
 1. Contact section is full width: photo fills the left half at full height, text and a wider form (about 540px) on the right.
 2. Footer uses The Row's layout: language/region column with a vertical divider, three link/address columns, philosophy statement in the right-hand column (where The Row has its newsletter), centred copyright below. "Site sans cookies" moved into the legal column.
-3. Bio portrait: replaced by Julien's full-HD version (1601 × 2000, B&W, no retouching needed). Source `site/img/cartel-source.jpg`; page uses `cartel-560/1122/1600.webp`.
+3. Bio portrait: replaced by Julien's full-HD version (1601 × 2000, B&W, no retouching needed). Source `docs/img/cartel-source.jpg`; page uses `cartel-560/1122/1600.webp`.
 4. Threshold: "La rentabilité commence là où la comparaison s’arrête." (Julien typed "là ou"; corrected to "là où", to confirm.)
 5. Hero: "De prix à marque." added under the h1, same 12px style.
 6. Menu: 12px, not uppercase, 44px between items, separator dots removed, globe icon before "FR" (also in the mobile drawer). The logo stays uppercase.
@@ -76,14 +76,14 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 - Footer right column: newsletter form like The Row: label "Rester informé", email field with underline and `>` submit, consent checkbox "J’accepte la politique de confidentialité." (link to `/privacy-policy/`). Both fields required, inline errors, goes through `submitLead('newsletter')`. Success sentence `[TODO: copy]`.
 - The philosophy statement ("Le prix est un signal…" and "Lorsque l’histoire…") was removed from the footer at Julien's request.
 
-Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias Tigiser), B&W, `site/img/rowing-600/1000/1500.webp`. The globe "FR" is a button with no language menu yet (only French exists).
+Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias Tigiser), B&W, `docs/img/rowing-600/1000/1500.webp`. The globe "FR" is a button with no language menu yet (only French exists).
 
 ## 8. Open TODOs (from BRIEF.md, still waiting on Julien)
 
 - Meta description (`[TODO: Julien to validate]` in `<head>`).
 - Success sentences after sending the case-study modal and the contact form (`[TODO: copy]`).
 - URL of "Questions fréquentes" (footer link is `#`).
-- Form endpoint: `submitLead()` in `site/main.js` only logs; no real handler exists.
+- Form endpoint: `submitLead()` in `docs/main.js` only logs; no real handler exists.
 - Production URL of the portrait used in `og:image`.
 - Labels added beyond the locked copy, to approve: "Aller au contenu" (skip link), "Menu", "Fermer".
 - The FAQ and free resources from the current homepage need a new home (not on this page).
@@ -106,4 +106,8 @@ Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias T
 
 ## 11. Threshold: converging hairlines (Julien's choice)
 
-The black/white strobe was tried and removed. Now the threshold section (`.threshold`) is a 200vh scroll track with a sticky 100vh stage. Once the sentence is pinned at the centre, two 1px lines (`--soft` grey) grow from the left and right screen edges towards it, slow down (ease-out) and stop 32px before the first and last words. Driven by scroll in `site/main.js` (`drawLines`, sets `--p` from 0 to 1, complete at 80% of the track). Meaning: two things side by side (comparison) stop where the sentence begins. With `prefers-reduced-motion` the lines are simply shown, fully drawn. This is the only animation on the page; keep it that way.
+The black/white strobe was tried and removed. Now the threshold section (`.threshold`) is a 200vh scroll track with a sticky 100vh stage. Once the sentence is pinned at the centre, two 1px lines (`--soft` grey) grow from the left and right screen edges towards it, slow down (ease-out) and stop 32px before the first and last words. Driven by scroll in `docs/main.js` (`drawLines`, sets `--p` from 0 to 1, complete at 80% of the track). Meaning: two things side by side (comparison) stop where the sentence begins. With `prefers-reduced-motion` the lines are simply shown, fully drawn. This is the only animation on the page; keep it that way.
+
+## 12. Online preview (GitHub Pages)
+
+The page lives in `docs/` so GitHub Pages can serve it (Settings → Pages → Deploy from a branch → `main` / `/docs`). Preview: https://julioessuisglaces.github.io/therow2/ . Every push to `main` updates it within a minute or two. `docs/.nojekyll` tells Pages to serve the files as they are. Links to `/insights/`, `/privacy-policy/` and `/conditions-generales/` point to pages that only exist on the real julienioset.ch, so they 404 in the preview (expected).

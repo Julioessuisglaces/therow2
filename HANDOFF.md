@@ -109,7 +109,7 @@ Contact photo: Julien's chosen image, a double scull from above (Pexels, Elias T
 Tried and removed: a black/white strobe; the sentence "La rentabilité commence là où la comparaison s’arrête."; a scroll-driven word-by-word sequence. Julien chose maximum sobriety.
 
 Now: `.threshold` is a 200vh scroll track with a sticky 100vh stage holding the `h2`, two lines one above the other, regular weight (400), 13px, no text effect:
-"Le marketing c’est vulgaire." / "Devenez une évidence en créant du sens."
+"Subir l’inertie n’est pas une stratégie." / "Devenez une évidence en créant du sens." (first line was "Le marketing c’est vulgaire." before)
 While pinned, two 1px lines (`--soft`) grow from the screen edges and stop 32px from the text (ease-out, complete at 80% of the track; `drawLines` in `docs/main.js`). With `prefers-reduced-motion` the lines are simply shown. This is the only animation on the page; keep it that way.
 
 ## 12. Online preview (GitHub Pages)

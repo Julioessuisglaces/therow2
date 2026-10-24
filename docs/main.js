@@ -29,12 +29,14 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => clos
 drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
 // Threshold: while the stage is pinned, two hairlines converge on the centre and
-// two lines of text play in turn: "Le marketing." then "C’est vulgaire." beside it,
-// fade out; "Construisez plutôt une marque." at once, fade out; then the final
-// sentence (the h2) appears and stays. Everything completes at 90% of the track.
+// two lines of text build up word group by word group, then fade out:
+// "Le marketing." + "C’est vulgaire."; then "Construisez plutôt une marque." +
+// "Forte." + "Éthique." + "Incomparable."; then the final sentence (the h2)
+// appears and stays. Everything completes at 90% of the track.
 const threshold = document.querySelector('.threshold');
 const steps = [...threshold.querySelectorAll('.threshold__step')];
-const WINDOW = 0.3;                       // share of the track per line of text
+const STARTS = [0, 0.25, 0.68];           // where each line of text begins (share of the track)
+const EDGE = 0.04;                        // fade length
 const fade = (x, a, b) => Math.min(1, Math.max(0, (x - a) / (b - a)));
 let frame = 0;
 const drawLines = () => {
@@ -43,15 +45,17 @@ const drawLines = () => {
   const t = Math.min(1, Math.max(0, -r.top / (0.9 * (r.height - innerHeight))));
   threshold.style.setProperty('--p', (1 - (1 - t) ** 2).toFixed(4)); // ease-out
   steps.forEach((el, i) => {
-    const a = i * WINDOW, b = a + WINDOW, edge = WINDOW * 0.15;
-    if (i === steps.length - 1) {                             // final sentence stays
-      el.style.opacity = fade(t, a, a + edge).toFixed(3);
+    const a = STARTS[i], b = STARTS[i + 1];
+    if (b === undefined) {                                    // final sentence stays
+      el.style.opacity = fade(t, a, a + EDGE).toFixed(3);
       return;
     }
-    el.style.opacity = (1 - fade(t, b - edge, b)).toFixed(3); // whole line fades out
-    el.querySelectorAll('.threshold__part').forEach((part, j) => {
-      const start = a + j * WINDOW * 0.4;                     // second half joins later
-      part.style.opacity = fade(t, start, start + edge).toFixed(3);
+    el.style.opacity = (1 - fade(t, b - EDGE, b)).toFixed(3); // whole line fades out
+    const parts = el.querySelectorAll('.threshold__part');
+    const gap = (b - a - 3 * EDGE) / parts.length;            // parts join one by one
+    parts.forEach((part, j) => {
+      const start = a + j * gap;
+      part.style.opacity = fade(t, start, start + EDGE).toFixed(3);
     });
   });
 };

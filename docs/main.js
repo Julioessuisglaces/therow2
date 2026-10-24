@@ -30,8 +30,8 @@ drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer();
 
 // Threshold: while the stage is pinned, two hairlines converge on the centre and
 // two lines of text play in turn: "Le marketing." then "C’est vulgaire." beside it,
-// fade out; "Construisez plutôt" then "une marque." beside it, fade out; then the
-// final sentence (the h2) appears and stays. Everything completes at 90% of the track.
+// fade out; "Construisez plutôt une marque." at once, fade out; then the final
+// sentence (the h2) appears and stays. Everything completes at 90% of the track.
 const threshold = document.querySelector('.threshold');
 const steps = [...threshold.querySelectorAll('.threshold__step')];
 const WINDOW = 0.3;                       // share of the track per line of text

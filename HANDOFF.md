@@ -118,6 +118,6 @@ The page lives in `docs/` so GitHub Pages can serve it (Settings → Pages → D
 
 ## 13. Engagement section (added Oct 24)
 
-New section `.engage` between the threshold and Mandats: a photo full width (children walking in line seen from above, with their shadows; B&W, `docs/img/engage-800/1400/2000.webp`, 3:2, max 100vh; it replaced an earlier clasped-hands photo), then two lines beneath, regular weight:
+New section `.engage` between the threshold and Mandats: a photo full width (children walking in line seen from above, with their shadows; B&W, `docs/img/engage-800/1400/2000.webp`, 3:2, 1240px wide and centred, text aligned to the photo; it replaced an earlier clasped-hands photo), then two lines beneath, regular weight:
 "Les entreprises ont un pouvoir. Celui d’améliorer demain." (the `h2`) / "Pré-requis pour toute collaboration. Les autres sont exclues."
 Julien wrote "Les companies" and "colloboration"; written as "Les entreprises" and "collaboration", to confirm with him.

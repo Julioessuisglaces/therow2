@@ -146,6 +146,12 @@ p + p { margin-top: 1.1em; }
 .threshold__line--right { transform-origin: right; }
 @media (prefers-reduced-motion: reduce) { .threshold { --p: 1; } }
 
+/* 2b. Engagement */
+.engage__img { width: 100%; aspect-ratio: 3 / 2; max-height: 100vh; overflow: hidden; }
+.engage__text { padding-top: 44px; }
+.engage__title { margin: 0; font-size: 13px; font-weight: 400; letter-spacing: .04em; }
+.engage__text p { margin-top: 2px; letter-spacing: .04em; }
+
 /* 3. Mandats */
 .mandats { min-height: 150vh; padding: var(--space) 0; display: flex; flex-direction: column; justify-content: center; }
 .mandats > .lead { margin-bottom: 72px; }

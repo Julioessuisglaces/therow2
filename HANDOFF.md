@@ -115,3 +115,9 @@ While pinned, two 1px lines (`--soft`) grow from the screen edges and stop 32px 
 ## 12. Online preview (GitHub Pages)
 
 The page lives in `docs/` so GitHub Pages can serve it (Settings → Pages → Deploy from a branch → `main` / `/docs`). Preview: https://julioessuisglaces.github.io/therow2/ . Every push to `main` updates it within a minute or two. `docs/.nojekyll` tells Pages to serve the files as they are. Links to `/insights/`, `/privacy-policy/` and `/conditions-generales/` point to pages that only exist on the real julienioset.ch, so they 404 in the preview (expected).
+
+## 13. Engagement section (added Oct 24)
+
+New section `.engage` between the threshold and Mandats: the clasped-hands photo full width (B&W, `docs/img/hands-800/1400/2000.webp`, 3:2, max 100vh), then two lines beneath, regular weight:
+"Les entreprises ont un pouvoir. Celui d’améliorer demain." (the `h2`) / "Pré-requis pour toute collaboration. Les autres sont exclues."
+Julien wrote "Les companies" and "colloboration"; written as "Les entreprises" and "collaboration", to confirm with him.

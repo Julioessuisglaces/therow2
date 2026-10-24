@@ -28,7 +28,7 @@ Then open http://localhost:5173. No build step, no dependencies. Plain HTML, CSS
 
 ## 4. Design system (already decided, do not change without Julien)
 
-- **Font:** Raleway (Google Fonts), weights 200 to 600. Body 12px, small labels 10px, uppercase titles with wide letter spacing (`--track: .32em`). The hero h1 is 12px.
+- **Font:** Raleway (Google Fonts), weights 200 to 600. Body 13px, small labels 11px, uppercase titles with wide letter spacing (`--track: .32em`). The hero h1 is 13px. (Sizes were raised +1px on Oct 24; a 14px trial for descriptions and bio was rejected.)
 - **Colours:** `--ink #080808`, `--mute #767676`, `--soft #a8a8a8`, `--line #e4e4e4`, white background.
 - **Buttons/links (CTA):** text, then a diagonal arrow `↗`, underlined (`.cta`).
 - **Photos:** always black and white (`filter: grayscale(1)` in CSS, and the new files are converted too).

@@ -29,35 +29,42 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => clos
 drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
 // Threshold: while the stage is pinned, two hairlines converge on the centre and
-// two lines of text build up word group by word group, then fade out:
-// "Le marketing." + "C’est vulgaire."; then "Construisez plutôt une marque." +
-// "Forte." + "Éthique." + "Incomparable."; then the final sentence (the h2)
-// appears and stays. Everything completes at 90% of the track.
+// six word groups are revealed in turn: "Le marketing." + "C’est vulgaire." on
+// one line, which then gives way to "Construisez plutôt une marque." + "Forte." +
+// "Éthique." + "Incomparable." on the second line, which stays.
+// Each reveal needs its own stretch of scroll, and reveals are at least
+// MIN_GAP ms apart, so a hard scroll still shows the words one by one.
 const threshold = document.querySelector('.threshold');
-const steps = [...threshold.querySelectorAll('.threshold__step')];
-const STARTS = [0, 0.25, 0.68];           // where each line of text begins (share of the track)
-const EDGE = 0.04;                        // fade length
-const fade = (x, a, b) => Math.min(1, Math.max(0, (x - a) / (b - a)));
-let frame = 0;
+const [line1, line2] = threshold.querySelectorAll('.threshold__step');
+const parts1 = line1.querySelectorAll('.threshold__part');
+const parts2 = line2.querySelectorAll('.threshold__part');
+const STATES = parts1.length + parts2.length;  // 6 reveals
+const FIRST = 0.04, STRETCH = 0.13;            // share of the track per reveal
+const MIN_GAP = 550;
+let state = 0, target = 0, lastStep = 0, timer = null, frame = 0;
+const render = () => {
+  line1.classList.toggle('is-on', state >= 1 && state <= parts1.length);
+  parts1.forEach((p, j) => p.classList.toggle('is-on', state >= 1 + j));
+  line2.classList.toggle('is-on', state > parts1.length);
+  parts2.forEach((p, j) => p.classList.toggle('is-on', state >= parts1.length + 1 + j));
+};
+const step = () => {
+  timer = null;
+  if (state === target) return;
+  const wait = MIN_GAP - (performance.now() - lastStep);
+  if (wait > 0) { timer = setTimeout(step, wait); return; }
+  state += target > state ? 1 : -1;
+  lastStep = performance.now();
+  render();
+  if (state !== target) timer = setTimeout(step, MIN_GAP);
+};
 const drawLines = () => {
   frame = 0;
   const r = threshold.getBoundingClientRect();
   const t = Math.min(1, Math.max(0, -r.top / (0.9 * (r.height - innerHeight))));
   threshold.style.setProperty('--p', (1 - (1 - t) ** 2).toFixed(4)); // ease-out
-  steps.forEach((el, i) => {
-    const a = STARTS[i], b = STARTS[i + 1];
-    if (b === undefined) {                                    // final sentence stays
-      el.style.opacity = fade(t, a, a + EDGE).toFixed(3);
-      return;
-    }
-    el.style.opacity = (1 - fade(t, b - EDGE, b)).toFixed(3); // whole line fades out
-    const parts = el.querySelectorAll('.threshold__part');
-    const gap = (b - a - 3 * EDGE) / parts.length;            // parts join one by one
-    parts.forEach((part, j) => {
-      const start = a + j * gap;
-      part.style.opacity = fade(t, start, start + EDGE).toFixed(3);
-    });
-  });
+  target = t < FIRST ? 0 : Math.min(STATES, 1 + Math.floor((t - FIRST) / STRETCH));
+  if (!timer) step();
 };
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('js-threshold');

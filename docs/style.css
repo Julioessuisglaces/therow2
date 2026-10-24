@@ -132,7 +132,7 @@ p + p { margin-top: 1.1em; }
 /* 2. Threshold */
 /* Tall scroll track; the stage stays pinned while two hairlines converge
    on the sentence and stop short of it (--p set from scroll in main.js) */
-.threshold { height: 700vh; position: relative; --p: 0; }
+.threshold { height: 400vh; position: relative; --p: 0; }
 .threshold__stage {
   position: sticky; top: 0; height: 100vh;
   display: flex; align-items: center; gap: 32px; text-align: center;

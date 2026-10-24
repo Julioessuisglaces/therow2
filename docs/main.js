@@ -32,15 +32,15 @@ drawer.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer();
 // six word groups are revealed in turn: "Le marketing." + "C’est vulgaire." on
 // one line, which then gives way to "Construisez plutôt une marque." + "Forte." +
 // "Éthique." + "Incomparable." on the second line, which stays.
-// Each reveal needs its own stretch of scroll, and reveals are at least
-// MIN_GAP ms apart, so a hard scroll still shows the words one by one.
+// Each reveal has its own stretch of scroll. MIN_GAP can space reveals in time
+// (e.g. 550 ms) so a hard scroll shows them one by one; 0 = follow the scroll.
 const threshold = document.querySelector('.threshold');
 const [line1, line2] = threshold.querySelectorAll('.threshold__step');
 const parts1 = line1.querySelectorAll('.threshold__part');
 const parts2 = line2.querySelectorAll('.threshold__part');
 const STATES = parts1.length + parts2.length;  // 6 reveals
 const FIRST = 0.04, STRETCH = 0.13;            // share of the track per reveal
-const MIN_GAP = 550;
+const MIN_GAP = 0;
 let state = 0, target = 0, lastStep = 0, timer = null, frame = 0;
 const render = () => {
   line1.classList.toggle('is-on', state >= 1 && state <= parts1.length);

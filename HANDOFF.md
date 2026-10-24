@@ -63,7 +63,7 @@ All applied and committed. Copy changes override the locked copy in BRIEF.md.
 2. Footer uses The Row's layout: language/region column with a vertical divider, three link/address columns, philosophy statement in the right-hand column (where The Row has its newsletter), centred copyright below. "Site sans cookies" moved into the legal column.
 3. Bio portrait: replaced by Julien's full-HD version (1601 × 2000, B&W, no retouching needed). Source `docs/img/cartel-source.jpg`; page uses `cartel-560/1122/1600.webp`.
 4. Threshold: "La rentabilité commence là où la comparaison s’arrête." (Julien typed "là ou"; corrected to "là où", to confirm.)
-5. Hero: line under the h1, same style. Was "De prix à marque.", now "Éthique rime avec rentabilité."
+5. Hero: line under the h1, same style. Was "De prix à marque.", then "Éthique rime avec rentabilité.", now "La guerre des prix et la course vers le bas s’arrêtent ici."
 6. Menu: 12px, not uppercase, 44px between items, separator dots removed, globe icon before "FR" (also in the mobile drawer). The logo stays uppercase.
 7. Mandats intro: "Trois services. Une seule exigence&#8239;: la marque."
 8. "Réserver ↗" now sits on its own line under "Tout commence par un entretien de trente minutes."

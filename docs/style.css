@@ -199,6 +199,16 @@ p + p { margin-top: 1.1em; }
 .dialog .form { margin-top: 0; }
 
 /* 6. Contact */
+.contact__details {
+  align-self: center;
+  padding: var(--space) clamp(24px, 6vw, 96px);
+}
+.contact__address { max-width: 330px; }
+.contact__address p { margin: 0 0 38px; line-height: 1.85; }
+.contact__address p:last-child { margin-bottom: 0; }
+.contact__address a:not(.cta) { border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.contact__address a:hover { border-color: var(--ink); }
+
 .contact {
   min-height: 100vh;
   display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
@@ -289,6 +299,7 @@ p + p { margin-top: 1.1em; }
   .cartel, .contact { grid-template-columns: 1fr; gap: 56px; min-height: 0; }
   .contact { gap: 0; }
   .contact__img { min-height: 0; aspect-ratio: 2 / 3; max-height: 80vh; }
+  .contact__details { padding: 56px 16px 0; }
   .contact__text { max-width: none; padding: 56px 16px var(--space); }
   .dialog { padding: 56px 16px 32px; }
   .footer { padding: 48px 16px 32px; }

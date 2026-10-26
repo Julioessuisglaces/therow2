@@ -1,0 +1,17 @@
+/* Site search: a restrained FAQ suggestion panel. */
+body>header nav .search-open{background:none;border:0;cursor:pointer;font:inherit;color:inherit;font-size:inherit;padding:0}
+.site-search[hidden]{display:none!important}
+.site-search{position:fixed;top:60px;right:0;z-index:1201;background:white;width:min(490px,100%);box-sizing:border-box;padding:31px 36px 34px;border:1px solid #e9e9e9;box-shadow:0 6px 18px rgba(0,0,0,.05);font-size:13px}
+.site-search__row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.site-search__close{border:0;background:none;font-size:23px;font-weight:400;cursor:pointer;line-height:1}
+.site-search input[type=search]{width:100%;height:36px;padding:6px 0;border:0;border-bottom:1px solid #999;background:transparent;border-radius:0;font:inherit;font-size:13px;outline:none;box-shadow:none}
+.site-search__hint{margin:25px 0 7px;color:#6a6a6a;font-size:13px}
+.site-search__results{display:flex;flex-direction:column}
+.site-search__results a,.site-search__results p{display:block;border-bottom:1px solid #ededed;text-decoration:none;color:#111;font-size:13px;line-height:1.5;padding:13px 0}
+.mobile-search-open{display:none}
+@media(max-width:767px){
+body>header nav .search-open{display:none!important}
+.site-search{top:56px;left:0;right:0;width:100%;max-height:calc(100dvh - 56px);overflow:auto;padding:25px 22px 36px}
+.mobile-search-open{display:flex!important;justify-content:space-between;align-items:center;border:0;border-bottom:1px solid #ededed;background:white;font-size:13px;font-family:inherit;width:100%;text-align:left;padding:19px 0;cursor:pointer}
+.mobile-search-open::after{content:'›';font-size:19px}
+}

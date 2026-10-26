@@ -1,0 +1,57 @@
+<!doctype html><html lang="fr-CH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Engagement — Julien Ioset</title><meta name="description" content="Engagement bénévole et contribution à des organisations à but non lucratif."><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="restored.css"><link rel="stylesheet" href="consistency.css"><link rel="stylesheet" href="/therow2/legal.css"><link rel="stylesheet" href="/therow2/mobile-row.css"></head><body id="top" class="legal-page"><a class="skip" href="#main">Aller au contenu</a><header><nav aria-label="Navigation principale"><a href="/therow2/#conviction">Conviction</a><a href="/therow2/#services">Services</a></nav><a class="wordmark" href="/therow2/#top">Julien Ioset</a><nav aria-label="Informations"><a href="/therow2/insights/index.html">Insights</a><a href="/therow2/#julien">À Propos</a><a href="/therow2/contact.html">Contact</a></nav></header><main id="main" class="legal-layout"><aside class="legal-sidebar"><p>Informations</p><nav aria-label="Informations légales"><a href="/therow2/privacy-policy.html" >Politique de confidentialité</a><a href="/therow2/conditions-generales.html">Conditions générales</a><a href="/therow2/questions-frequentes.html">Questions fréquentes</a><a href="/therow2/engagement.html">Engagement</a><a href="/therow2/contact.html">Contact</a><a href="/therow2/engagement.html" aria-current="page">Engagement</a></nav><a class="back-home" href="/therow2/">Retour à l’accueil</a></aside><article class="legal-copy"><h1>Engagement</h1><p>J'accompagne bénévolement des associations caritatives et des fondations afin de les aider dans leurs projets marketing, dans le but de leur permettre de travailler plus efficacement et d'atteindre leurs objectifs.</p><p>De plus, 3 % des revenus générés par mes missions sont immédiatement reversés à une organisation à but non lucratif.</p>
+<p class="engagement-note">Cet accompagnement est réalisé selon mes disponibilités.</p>
+<h2>Proposer un projet</h2>
+<form class="engagement-form" id="engagement-form">
+  <div class="engagement-field"><label for="eng-organisation">Organisation</label><input id="eng-organisation" name="organisation" type="text" autocomplete="organization" required placeholder="Organisation"></div>
+  <div class="engagement-field"><label for="eng-nom">Nom</label><input id="eng-nom" name="nom" type="text" autocomplete="family-name" required placeholder="Nom"></div>
+  <div class="engagement-field"><label for="eng-prenom">Prénom</label><input id="eng-prenom" name="prenom" type="text" autocomplete="given-name" required placeholder="Prénom"></div>
+  <div class="engagement-field"><label for="eng-message">Message</label><textarea id="eng-message" name="message" rows="5" required placeholder="Message"></textarea></div>
+  <button type="submit">Envoyer votre demande</button>
+  <p class="engagement-feedback" role="status" aria-live="polite" hidden>Ce formulaire est une maquette. Aucun message n'a été envoyé.</p>
+</form>
+<script>document.getElementById('engagement-form').addEventListener('submit',function(e){e.preventDefault();if(this.reportValidity()){this.querySelector('.engagement-feedback').hidden=false;}});</script>
+</article></main><footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__col footer__col--first">
+      <label class="footer__k" for="langue">Choisissez votre langue&#8239;:</label>
+      <select class="select" id="langue" name="langue">
+        <option value="fr" lang="fr" selected>Français</option>
+        <option value="de" lang="de">Deutsch</option>
+        <option value="en" lang="en">English</option>
+      </select>
+      <p class="footer__k footer__gap">Région&#8239;:</p>
+      <p>Suisse romande</p>
+    </div>
+    <nav class="footer__col" aria-label="Ressources">
+      <a href="/therow2/insights/index.html">Insights</a>
+      <!-- TODO: confirm URL with Julien -->
+      <a href="/therow2/questions-frequentes.html">Questions fréquentes</a><a href="/therow2/engagement.html">Engagement</a>
+      <a href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <nav class="footer__col" aria-label="Informations légales">
+      <a href="/therow2/conditions-generales.html">Conditions générales</a>
+      <a href="/therow2/privacy-policy.html">Confidentialité</a>
+      <p>Site sans cookies</p>
+    <a href="/therow2/contact.html">Contact</a></nav>
+    <div class="footer__col">
+      <p>Case postale</p>
+      <p>1000 Lausanne 12</p>
+      <p>Suisse</p>
+      <a href="tel:+41789138008">+41 78 913 80 08</a>
+    </div>
+    <form class="footer__col footer__news" id="news-form" novalidate>
+      <label class="footer__k" for="news-email">Rester informé</label>
+      <div class="footer__field">
+        <input type="email" id="news-email" name="email" required autocomplete="email"
+               placeholder="Adresse e-mail" aria-describedby="news-email-err">
+        <button type="submit" aria-label="S’inscrire à la newsletter">&gt;</button>
+      </div>
+      <p class="field__err" id="news-email-err" aria-live="polite"></p>
+      <label class="check"><input type="checkbox" id="news-consent" name="consent" required aria-describedby="news-consent-err"> <span>J’accepte la <a href="/therow2/privacy-policy.html"><u>politique de confidentialité</u></a>.</span></label>
+      <p class="field__err" id="news-consent-err" aria-live="polite"></p>
+      <!-- TODO: copy (success sentence) -->
+      <p class="news__done" hidden tabindex="-1">Maquette — aucune inscription n’est envoyée.</p>
+    </form>
+  </div>
+  <p class="footer__copy">© 2026 Julien Ioset</p>
+</footer><p id="preview-status" role="status" hidden></p><script src="/therow2/preview.js"></script><script defer src="/therow2/mobile-row.js"></script></body></html>

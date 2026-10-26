@@ -1,0 +1,96 @@
+/* Mobile editorial navigation: adapted to Julien Ioset, inspired by The Row. */
+.mobile-menu-toggle,.mobile-menu-panel,.mobile-footer-links{display:none}
+@media(max-width:767px){
+html,body{max-width:100%;overflow-x:clip}
+body>header{height:56px!important;min-height:56px!important;display:flex!important;position:relative;align-items:center!important;justify-content:center!important;padding:0 16px!important;border-bottom:1px solid #e1e1e1;background:#fff!important;z-index:999!important}
+body>header>nav{display:none!important}
+body>header .wordmark{position:static!important;transform:none!important;margin:0!important;font-size:17px!important;font-weight:300!important;letter-spacing:.16em!important;white-space:nowrap;line-height:1!important}
+.mobile-menu-toggle{display:flex;position:absolute;left:14px;top:0;height:55px;width:25px;flex-direction:column;justify-content:center;gap:5px;border:0;background:transparent;padding:0;cursor:pointer;z-index:1002}
+.mobile-menu-toggle span{display:block;height:1px;width:20px;background:#111}
+.mobile-menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3px) rotate(45deg)}
+.mobile-menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3px) rotate(-45deg)}
+.mobile-menu-toggle[aria-expanded=true] span:nth-child(2){opacity:0}
+.mobile-menu-panel{display:block;position:fixed;top:56px;left:0;right:0;bottom:0;background:white;z-index:998;overflow:auto;visibility:hidden;transform:translateX(-100%);transition:transform .22s ease,visibility .22s}
+.mobile-menu-panel.is-open{visibility:visible;transform:none}
+.mobile-menu-panel nav{display:flex;flex-direction:column;padding:20px 19px 45px}
+.mobile-menu-panel a{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#111;text-decoration:none;padding:19px 0;border-bottom:1px solid #ededed;letter-spacing:0}
+.mobile-menu-panel a::after,.mobile-footer-links a::after{content:'›';font-size:19px;font-weight:300;line-height:1}
+body.mobile-menu-open{overflow:hidden}
+.footer{padding:0!important;margin-top:70px!important}
+.footer__grid{display:flex!important;flex-direction:column!important;padding:0!important;gap:0!important}
+.footer__grid>.footer__col{display:none!important}
+.footer__grid>.footer__news{display:flex!important;order:-1!important;width:100%!important;box-sizing:border-box;margin:0!important;padding:22px 28px 28px!important;gap:0!important;border-top:1px solid #dedede;border-bottom:1px solid #dedede}
+.footer__news label.footer__k{font-size:12px!important;color:#111!important;margin:0 0 14px!important}
+.footer__news .footer__field{display:flex!important;width:100%!important;flex-direction:column!important;height:auto!important;gap:0!important}
+.footer__news .footer__field input{width:100%!important;height:34px!important;box-sizing:border-box!important;border:1px solid #ddd!important;padding:8px!important;font-size:12px!important}
+.footer__news .footer__field button{width:100%!important;min-height:30px!important;height:30px!important;border:0!important;background:#222!important;color:#fff!important;font-size:12px!important}
+.footer__news .footer__field button::after{content:'S’inscrire';font-size:12px}
+.footer__news .footer__field button{font-size:0!important}
+.footer__news .check{display:flex!important;align-items:flex-start!important;margin-top:27px!important;gap:8px!important;font-size:11px!important}
+.footer__news .check input{flex:none}
+.mobile-footer-links{display:block;order:1;width:100%;box-sizing:border-box}
+.mobile-footer-links a{display:flex;justify-content:space-between;align-items:center;width:100%;box-sizing:border-box;min-height:55px;padding:16px 19px;text-decoration:none!important;color:#111!important;font-size:12px!important}
+.mobile-footer-links a:last-child{border-bottom:1px solid #e1e1e1}
+.footer__copy{padding:37px 16px 28px!important;text-align:center!important;font-size:12px!important;margin:0!important}
+}
+@media(prefers-reduced-motion:reduce){.mobile-menu-panel{transition:none}}
+
+/* Fix inherited alternating footer alignment and overlayed submit text. */
+@media(max-width:767px){
+  html body .mobile-footer-links{display:block!important;width:100%!important;direction:ltr!important;text-align:left!important;position:static!important}
+  html body .mobile-footer-links a,html body .mobile-footer-links a:nth-child(odd),html body .mobile-footer-links a:nth-child(even){display:flex!important;flex-direction:row!important;justify-content:space-between!important;align-items:center!important;text-align:left!important;direction:ltr!important;float:none!important;position:static!important;transform:none!important;left:auto!important;right:auto!important;width:100%!important;min-height:54px!important;margin:0!important;padding:16px 20px!important;border:0!important;box-sizing:border-box!important;line-height:1.5!important;font-size:12px!important}
+  html body .mobile-footer-links a::after{display:inline-block!important;position:static!important;transform:none!important;float:none!important;margin-left:auto!important;font-size:18px!important}
+  html body .footer__news .footer__field{position:static!important}
+  html body .footer__news .footer__field button{position:static!important;transform:none!important;display:block!important;width:100%!important;min-width:0!important;max-width:none!important;box-sizing:border-box!important;text-align:center!important;padding:0 10px!important;font-size:12px!important;color:#fff!important;line-height:30px!important}
+  html body .footer__news .footer__field button::after{content:none!important}
+}
+
+@media(max-width:767px){
+ html body .footer__news .footer__field button{font-size:0!important;line-height:30px!important}
+ html body .footer__news .footer__field button::after{content:'S’inscrire'!important;display:block!important;position:static!important;font-size:12px!important;line-height:30px!important;text-align:center!important;color:#fff!important}
+}
+
+/* The Row-inspired mobile footer: measured vertical rhythm, uniform 13px text. */
+@media(max-width:767px){
+ html body footer .footer__grid{gap:0!important}
+ html body footer .footer__news{padding:22px 28px 27px!important;border-top:1px solid #dedede!important;border-bottom:1px solid #dedede!important}
+ html body footer .footer__news label.footer__k{font-size:13px!important;margin-bottom:13px!important;line-height:1.5!important}
+ html body footer .footer__news .footer__field input{height:32px!important;padding:6px!important;font-size:13px!important;border:1px solid #dedede!important}
+ html body footer .footer__news .footer__field button{height:30px!important;min-height:30px!important;line-height:30px!important}
+ html body footer .footer__news .footer__field button::after{font-size:13px!important}
+ html body footer .footer__news .check{margin-top:30px!important;gap:9px!important;font-size:13px!important;line-height:1.45!important}
+ html body footer .footer__news .check span,html body footer .footer__news .check a{font-size:13px!important}
+ html body footer .mobile-footer-links a,html body footer .mobile-footer-links a:nth-child(odd),html body footer .mobile-footer-links a:nth-child(even){height:56px!important;min-height:56px!important;max-height:56px!important;padding:0 18px!important;font-size:13px!important;line-height:1.25!important;border:0!important;font-weight:400!important;letter-spacing:0!important}
+ html body footer .mobile-footer-links a::after{font-size:18px!important}
+ html body footer .footer__copy{font-size:13px!important;padding:36px 16px 30px!important;text-align:center!important}
+}
+
+@media(max-width:767px){html body footer .footer__news .footer__field button{font-size:13px!important;color:#fff!important;line-height:30px!important;text-indent:0!important;}html body footer .footer__news .footer__field button::after{content:none!important;display:none!important}}
+
+/* Center the three service offers on mobile. */
+@media(max-width:767px){
+  html body .mandats .offer{ text-align:center!important; align-items:center!important; }
+  html body .mandats .offer h3,html body .mandats .offer p,html body .mandats .offer .offer__meta,html body .mandats .offer .offer__price,html body .mandats .offer .offer__details{ text-align:center!important; }
+  html body .mandats .offer .cta{display:block!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important;}
+}
+
+/* Mobile: persistent header, as on The Row. */
+@media(max-width:767px){
+  html {scroll-padding-top:56px!important;}
+  html body {padding-top:56px!important;}
+  html body>header {position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;box-sizing:border-box!important;z-index:1100!important;}
+  html body .mobile-menu-panel {z-index:1099!important;}
+}
+
+@media(max-width:767px){html body .mandats #mandats-title,html body .mandats .lead{text-align:center!important;margin-left:auto!important;margin-right:auto!important;}}
+
+/* Reduce the blank space between the Contact form and mobile footer. */
+@media(max-width:767px){html body.contact-information-page .legal-layout{padding-bottom:22px!important;min-height:0!important}html body.contact-information-page .footer{margin-top:0!important}}
+
+@media(max-width:767px){html body.contact-information-page main.legal-layout{padding-bottom:0!important;margin-bottom:0!important;min-height:0!important}html body.contact-information-page main.legal-layout .legal-copy{margin-bottom:0!important;padding-bottom:0!important}html body.contact-information-page footer.footer{margin-top:0!important;padding-top:0!important}}
+
+/* Contact mobile: remove redundant footer newsletter block; navigation follows the form. */
+@media(max-width:767px){html body.contact-information-page footer .footer__news{display:none!important}html body.contact-information-page footer .mobile-footer-links{order:0!important}}
+
+/* Separate homepage anchors from general information in the mobile navigation. */
+@media(max-width:767px){html body .mobile-menu-panel nav a:nth-child(6){margin-top:28px!important;border-top:1px solid #ededed!important;padding-top:24px!important}}

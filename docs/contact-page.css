@@ -1,0 +1,21 @@
+/* Dedicated contact page: restrained, editorial two-column composition. */
+.dedicated-contact .contact-page{padding:145px 0 120px}
+.dedicated-contact .contact-page__intro{width:min(1140px,calc(100% - 96px));margin:0 auto 100px;max-width:1140px}
+.dedicated-contact .contact-page__intro h1{font-size:13px;font-weight:400;margin:0 0 42px}
+.dedicated-contact .contact-page__intro p{font-size:13px;line-height:1.85;font-weight:400;max-width:650px;margin:0 0 26px}
+.dedicated-contact .contact.row-contact{padding:0;margin:0 auto;width:min(1140px,calc(100% - 96px));grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(45px,7vw,115px)}
+.dedicated-contact .contact.row-contact .contact__text{width:100%}
+.dedicated-contact .contact.row-contact .form{width:100%}
+.dedicated-contact .contact.row-contact .form button[type=submit]{width:100%;max-width:none;min-width:0}
+@media(max-width:900px){.dedicated-contact .contact-page{padding:115px 0 90px}.dedicated-contact .contact-page__intro,.dedicated-contact .contact.row-contact{width:calc(100% - 64px)}.dedicated-contact .contact.row-contact{grid-template-columns:1fr;gap:75px}}
+@media(max-width:650px){.dedicated-contact .contact-page__intro,.dedicated-contact .contact.row-contact{width:calc(100% - 48px)}.dedicated-contact .contact-page__intro{margin-bottom:75px}.dedicated-contact .contact-page__intro h1{margin-bottom:32px}}
+
+/* Contact page within legal-information layout. */
+.legal-page .legal-contact-form{margin-top:28px;max-width:680px}
+.legal-page .legal-contact-form .form{display:flex;flex-direction:column;gap:24px;margin:0}
+.legal-page .legal-contact-form .field label{display:block;font-size:13px;margin-bottom:4px}
+.legal-page .legal-contact-form input,.legal-page .legal-contact-form select{width:100%;height:30px;border:0;border-bottom:1px solid #dedede;background:transparent;border-radius:0;font:inherit;font-size:13px;padding:4px 0;color:#1c1b1b}
+.legal-page .legal-contact-form textarea{width:100%;height:115px;border:1px solid #888;border-radius:0;padding:8px;font:inherit;font-size:13px;resize:vertical}
+.legal-page .legal-contact-form .form button[type=submit]{width:100%;min-width:0;max-width:none;display:block;margin-top:0;height:auto;min-height:36px;padding:8px 12px;border:1px solid #1c1b1b;background:#1c1b1b;color:white;text-align:center;font-size:13px;letter-spacing:0;text-transform:none}
+.legal-page .legal-contact-form .form button[type=submit]:hover{background:#333;color:white}
+.legal-page .legal-contact-form .form-privacy{font-size:13px;margin:0}

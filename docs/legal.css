@@ -1,0 +1,31 @@
+.legal-page>header{background:rgba(255,255,255,.96)}
+.legal-layout{width:calc(100% - 96px);max-width:980px;margin:0 auto;padding:145px 0 150px;display:grid;grid-template-columns:245px minmax(0,1fr);column-gap:80px;align-items:start;min-height:70vh}
+.legal-sidebar{font-size:13px;line-height:2;position:sticky;top:130px}.legal-sidebar>p{margin:0 0 38px}.legal-sidebar nav{display:flex;flex-direction:column;gap:8px}.legal-sidebar a[aria-current=page]{text-decoration:underline;text-underline-offset:3px}.back-home{display:inline-block;margin-top:38px}
+.legal-copy{min-width:0;font-size:13px;line-height:1.7;letter-spacing:0}.legal-copy h1,.legal-copy h2,.legal-copy h3{font-size:13px;line-height:1.7;font-weight:400;letter-spacing:0;text-decoration:underline;text-underline-offset:2px;text-transform:none}.legal-copy h1{margin:0 0 24px}.legal-copy h2{margin:30px 0 0}.legal-copy h3{margin:24px 0 0}.legal-copy p{margin:0 0 20px}.legal-copy h2+p,.legal-copy h3+p{margin-top:0}.legal-copy .legal-date{font-size:13px;color:#666;margin-bottom:30px}.legal-copy ul{padding-left:18px;margin:0 0 22px}.legal-copy li{padding-left:2px;margin:0 0 12px}.legal-copy strong{font-weight:400}.legal-copy a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(max-width:900px){.legal-layout{width:calc(100% - 64px);grid-template-columns:190px minmax(0,1fr);gap:40px;padding-top:150px}.legal-sidebar{font-size:13px}}
+@media(max-width:700px){.legal-layout{display:block;width:calc(100% - 48px);padding:155px 0 90px}.legal-sidebar{position:static;margin-bottom:60px}.legal-sidebar>p{margin-bottom:22px}.legal-sidebar nav{gap:8px}.back-home{margin-top:22px}.legal-copy{font-size:13px}.legal-copy h1{margin-bottom:20px}}
+@media print{.legal-page>header,.legal-sidebar,.footer,#preview-status{display:none}.legal-layout{display:block;width:100%;max-width:none;padding:0}.legal-copy{font-size:11pt}.legal-copy h2,.legal-copy h3{break-after:avoid}}
+
+
+
+/* Match the lightweight header wordmark used across the main website. */
+.legal-page header .wordmark { font-family:'Basic Commercial',Arial,sans-serif; font-weight:300 !important; }
+
+/* Volunteer application: minimal fields consistent with information pages. */
+.engagement-note{margin-top:36px!important;color:#6a6a6a}
+.engagement-form{margin-top:26px;display:flex;flex-direction:column;gap:24px}
+.engagement-field label{display:block;margin-bottom:6px;font-size:13px}
+.engagement-field input,.engagement-field textarea{width:100%;box-sizing:border-box;border:0;border-bottom:1px solid #bcbcbc;background:transparent;border-radius:0;padding:8px 0;font:inherit;font-size:13px;color:#1c1b1b}
+.engagement-field textarea{border:1px solid #bcbcbc;padding:9px;resize:vertical;min-height:120px}
+.engagement-field input:focus-visible,.engagement-field textarea:focus-visible{outline:1px solid #1c1b1b;outline-offset:3px}
+.engagement-form button{width:100%;background:#1c1b1b;border:1px solid #1c1b1b;color:#fff;padding:11px 15px;font:inherit;font-size:13px;cursor:pointer}
+.engagement-feedback{font-size:13px;color:#6a6a6a}
+
+/* Match the dedicated Contact form exactly. */
+.legal-page .engagement-form{margin-top:28px;max-width:680px;gap:24px}
+.legal-page .engagement-field label{font-size:13px;margin-bottom:4px}
+.legal-page .engagement-field input{width:100%;box-sizing:border-box;height:30px;border:0;border-bottom:1px solid #dedede;border-radius:0;padding:4px 0;background:transparent;font:inherit;font-size:13px;color:#1c1b1b}
+.legal-page .engagement-field textarea{width:100%;box-sizing:border-box;height:115px;min-height:115px;border:1px solid #888;border-radius:0;padding:8px;background:transparent;font:inherit;font-size:13px;resize:vertical;color:#1c1b1b}
+.legal-page .engagement-field input:focus,.legal-page .engagement-field input:focus-visible,.legal-page .engagement-field textarea:focus,.legal-page .engagement-field textarea:focus-visible{outline:none!important;box-shadow:none!important}
+.legal-page .engagement-form button[type=submit]{width:100%;min-width:0;max-width:none;display:block;margin-top:0;height:auto;min-height:36px;padding:8px 12px;border:1px solid #1c1b1b;background:#1c1b1b;color:#fff;text-align:center;font-size:13px;letter-spacing:0;text-transform:none}
+.legal-page .engagement-form button[type=submit]:hover{background:#333;color:white}

@@ -1,149 +1,9 @@
-<!doctype html>
-<html lang="fr-CH">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Julien Ioset · Direction marketing externalisée · Suisse romande</title>
-<!-- TODO: Julien to validate the meta description -->
-<meta name="description" content="[TODO: Julien to validate]">
-<link rel="canonical" href="https://julienioset.ch/">
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fr_CH">
-<meta property="og:url" content="https://julienioset.ch/">
-<meta property="og:title" content="Julien Ioset · Direction marketing externalisée · Suisse romande">
-<meta property="og:description" content="Stratégie de marque. Direction marketing externalisée. PME de Suisse romande.">
-<!-- TODO: confirm the production path of the portrait -->
-<meta property="og:image" content="https://julienioset.ch/img/hero-1600.webp">
-
-<link rel="preload" as="image" type="image/webp"
-      imagesrcset="img/hero-1000.webp 1000w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w"
-      imagesizes="100vw" media="(min-width: 640px)">
-<link rel="preload" as="image" type="image/webp"
-      imagesrcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w"
-      imagesizes="100vw" media="(max-width: 639px)">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200..700;1,300..400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://julienioset.ch/#julien",
-      "name": "Julien Ioset",
-      "jobTitle": "Directeur marketing externalisé",
-      "email": "mailto:j.ioset@julienioset.ch",
-      "url": "https://julienioset.ch/",
-      "sameAs": ["https://www.linkedin.com/in/julienioset/"],
-      "worksFor": { "@id": "https://julienioset.ch/#org" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://julienioset.ch/#org",
-      "name": "Julien Ioset",
-      "url": "https://julienioset.ch/",
-      "email": "mailto:j.ioset@julienioset.ch",
-      "founder": { "@id": "https://julienioset.ch/#julien" },
-      "sameAs": ["https://www.linkedin.com/in/julienioset/"],
-      "makesOffer": [
-        { "@type": "Offer", "name": "Conseiller", "price": "2000", "priceCurrency": "CHF",
-          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "2000", "priceCurrency": "CHF", "unitText": "mois" } },
-        { "@type": "Offer", "name": "Planifier", "price": "7500", "priceCurrency": "CHF" },
-        { "@type": "Offer", "name": "Diriger", "price": "5000", "priceCurrency": "CHF",
-          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "5000", "priceCurrency": "CHF", "unitText": "mois" } }
-      ]
-    }
-  ]
-}
-</script>
-</head>
-<body>
-
-<!-- TODO: copy (skip link label) -->
-<a class="skip" href="#main">Aller au contenu</a>
-
-<!-- 0. Header -->
-<header class="nav" id="nav">
-  <a class="nav__logo" href="#top">Julien Ioset</a>
-  <nav class="nav__links" aria-label="Navigation principale">
-    <a href="#mandats">Services</a>
-    <a href="#julien">À propos</a>
-    <a href="/insights/">Insights</a>
-    <a href="#contact">Contact</a>
-    <a class="lang" href="#langue" aria-label="fr, choisir la langue">
-      <svg class="lang__icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
-        <circle cx="8" cy="8" r="7"/><ellipse cx="8" cy="8" rx="3" ry="7"/><path d="M1 8h14M2.2 4.5h11.6M2.2 11.5h11.6"/>
-      </svg>
-      <span class="lang__code">fr</span>
-    </a>
-  </nav>
-  <!-- TODO: copy (Menu / Fermer) -->
-  <button class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
-</header>
-
-<div class="drawer" id="drawer" hidden>
-  <button class="drawer__close" type="button">Fermer</button>
-  <nav class="drawer__links" aria-label="Navigation mobile">
-    <a href="#mandats">Services</a>
-    <a href="#julien">À propos</a>
-    <a href="/insights/">Insights</a>
-    <a href="#contact">Contact</a>
-    <a class="lang" href="#langue" aria-label="fr, choisir la langue">
-      <svg class="lang__icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
-        <circle cx="8" cy="8" r="7"/><ellipse cx="8" cy="8" rx="3" ry="7"/><path d="M1 8h14M2.2 4.5h11.6M2.2 11.5h11.6"/>
-      </svg>
-      <span class="lang__code">fr</span>
-    </a>
-  </nav>
-</div>
-
-<main id="main">
-
-<!-- 1. Hero -->
-<section class="hero" id="top" aria-labelledby="hero-title">
-  <picture>
-    <source media="(max-width: 639px)" type="image/webp"
-            srcset="img/hero-m-480.webp 480w, img/hero-m-720.webp 720w" sizes="100vw">
-    <img class="hero__img" src="img/hero-1600.webp"
-         srcset="img/hero-1000.webp 1000w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" sizes="100vw"
-         width="2000" height="1116" fetchpriority="high"
-         alt="Portrait de Julien Ioset en t-shirt noir, adossé à un mur clair">
-  </picture>
-  <div class="hero__content">
-    <h1 class="hero__eyebrow" id="hero-title">Stratégie de marque. Direction marketing externalisée.<br>PME de Suisse romande.</h1>
-    <p class="hero__sub">Alternative au bruit et à la guerre des prix.</p>
-  </div>
-</section>
-
-<!-- 2. Threshold: two static lines, hairlines converge on scroll (see main.js) -->
-<section class="threshold" aria-labelledby="threshold-title">
-  <div class="threshold__stage">
-    <span class="threshold__line threshold__line--left" aria-hidden="true"></span>
-    <h2 class="threshold__text" id="threshold-title">L’inertie n’est pas une stratégie.<br>Créer du sens, oui.</h2>
-    <span class="threshold__line threshold__line--right" aria-hidden="true"></span>
-  </div>
-</section>
-
-<!-- 2b. Engagement: full-width photo, two lines beneath -->
-<section class="engage" aria-labelledby="engage-title">
-  <figure class="engage__img">
-    <img src="img/engage-1400.webp" srcset="img/engage-800.webp 800w, img/engage-1400.webp 1400w, img/engage-2000.webp 2000w"
-         sizes="(max-width: 1272px) 100vw, 1240px" width="2000" height="1337" loading="lazy" decoding="async"
-         alt="Quatre enfants marchant en file, vus d’en haut, leurs ombres projetées sur le sable">
-  </figure>
-  <div class="engage__text">
-    <h2 class="engage__title" id="engage-title">Les entreprises ont un pouvoir. Celui d’améliorer demain.</h2>
-    <p>Pré-requis pour toute collaboration. Les autres sont exclues.</p>
-  </div>
-</section>
-
-<!-- 3. Mandats -->
-<section class="mandats wrap" id="mandats" aria-labelledby="mandats-title">
+<!doctype html><html lang="fr-CH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julien Ioset</title><meta name="description" content="Julien Ioset. Stratégie de marque. Suisse romande."><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="restored.css"><link rel="stylesheet" href="consistency.css"><link rel="stylesheet" href="/therow2/mobile-row.css"><link rel="stylesheet" href="/therow2/newsletter-popup.css"></head><body id="top"><a class="skip" href="#main">Aller au contenu</a>
+<header><nav aria-label="Navigation principale"><a href="#conviction">Conviction</a><a href="#services">Services</a></nav><a class="wordmark" href="#top">Julien Ioset</a><nav aria-label="Informations"><a href="/therow2/insights/index.html">Insights</a><a href="#julien">À Propos</a><a href="/therow2/contact.html">Contact</a></nav></header>
+<main id="main"><section class="hero" aria-label="Julien Ioset"><picture><source media="(max-width:600px)" srcset="assets/hero-m-720.webp"><img src="assets/hero-2000.webp" alt="Portrait de Julien Ioset" fetchpriority="high"></picture></section>
+<section class="perspective"><h1>Stratégie de marque.<br>Direction marketing externalisée.</h1></section>
+<section class="conviction" id="conviction"><figure><img src="assets/engage-1400.webp" alt="Quatre enfants et leurs ombres sur le sable" loading="lazy"></figure><div class="conviction-copy"><h2>Les entreprises ont un pouvoir. Celui d’améliorer demain.</h2><p>Pré-requis pour toute collaboration. Les autres sont exclues.</p></div></section>
+<section class="mandats wrap" id="services" aria-labelledby="mandats-title">
   <h2 class="lead" id="mandats-title">Trois services. Une seule exigence&#8239;: la marque.</h2>
 
   <div class="mandats__grid">
@@ -153,7 +13,7 @@
       <p class="offer__meta">Deux séances par mois. Jusqu’à six heures. Engagement de deux mois.</p>
       <p class="offer__price">CHF 2’000 / mois</p>
       <button class="cta toggle" type="button" aria-expanded="false" aria-controls="details-1">Détails</button>
-      <div class="offer__details" id="details-1" hidden="until-found">
+      <div class="offer__details" id="details-1" hidden>
         <p>Deux rendez-vous de conseil par mois. Un avis indépendant sur les projets et les décisions. Des recommandations remises après chaque séance. L’examen ponctuel des supports et des propositions. Les décisions éclairées ici, les commandes gardées par vous. Pour les dirigeants qui pilotent eux-mêmes leur marketing.</p>
       </div>
     </article>
@@ -164,7 +24,7 @@
       <p class="offer__meta">Six séances. Jusqu’à vingt-trois heures. Mission de six semaines.</p>
       <p class="offer__price">CHF 7’500 / mission</p>
       <button class="cta toggle" type="button" aria-expanded="false" aria-controls="details-2">Détails</button>
-      <div class="offer__details" id="details-2" hidden="until-found">
+      <div class="offer__details" id="details-2" hidden>
         <p>L’offre, le positionnement et les actions sont analysés. Une proposition de valeur et des messages différenciants sont formulés. Une feuille de route sur douze mois est établie, priorités comprises. Le plan est remis prêt à l’emploi, à vos équipes ou à vos agences. Aucune prestation n’est vendue en aval.</p>
       </div>
     </article>
@@ -172,10 +32,10 @@
     <article class="offer">
       <h3 class="label">III. Diriger</h3>
       <p>Le marketing se dirige. Il ne se subit pas.</p>
-      <p class="offer__meta">Jusqu’à quinze heures par mois. Engagement de trois mois.</p>
+      <p class="offer__meta">Jusqu’à quinze heures par mois. Engagement de trois mois. Nombre de clients restreint.</p>
       <p class="offer__price">CHF 5’000 / mois</p>
       <button class="cta toggle" type="button" aria-expanded="false" aria-controls="details-3">Détails</button>
-      <div class="offer__details" id="details-3" hidden="until-found">
+      <div class="offer__details" id="details-3" hidden>
         <p>La feuille de route est tenue à jour. Les priorités sont fixées, les arbitrages rendus. Équipes et agences sont briefées, puis supervisées. Un bilan des résultats est présenté chaque mois. Le cap est tenu ici. L’exécution reste chez ceux qui la réalisent.</p>
       </div>
     </article>
@@ -187,93 +47,29 @@
     <a class="cta" href="https://meetings-eu1.hubspot.com/julien-ioset" target="_blank" rel="noopener">Réserver <span class="cta__arrow" aria-hidden="true">↗</span></a>
   </div>
 </section>
-
-<!-- 4. Cartel -->
-<section class="cartel wrap" id="julien" aria-labelledby="julien-title">
-  <figure class="cartel__img frame">
-    <img src="img/cartel-1122.webp" srcset="img/cartel-560.webp 560w, img/cartel-1122.webp 1122w, img/cartel-1600.webp 1600w"
-         sizes="(max-width: 900px) 100vw, 420px" width="1600" height="1999" loading="lazy" decoding="async"
-         alt="Julien Ioset assis en veste noire, les mains jointes, regardant l’objectif">
-  </figure>
-  <div class="cartel__text">
-    <h2 class="label" id="julien-title">Julien Ioset</h2>
-    <p>Dix-sept ans entre la vente, la gestion de produits et la direction marketing, de la grande distribution suisse à l’industrie de précision.</p>
-    <p>Une stratégie ne se mesure pas au nombre d’actions menées. Elle se mesure à la qualité des décisions prises.</p>
-    <p class="caption">Vente, produit, marketing · B2B &amp; B2C · Distribution et industrie · Enseignant au Brevet fédéral Marketing et Vente</p>
-    <a class="cta" href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn <span class="cta__arrow" aria-hidden="true">↗</span></a>
+<section class="about" id="julien"><figure><img src="assets/cartel-1122.webp" alt="Julien Ioset, assis, en veste noire" loading="lazy"></figure><div><p>Dix-sept ans entre la vente, la gestion de produits et la direction marketing, ainsi que l’enseignement au Brevet fédéral de Marketing, nourrissent une vision fondée sur la création de valeur, la justesse des décisions et le respect des individus, où stratégie, marque et éthique se rejoignent pour mettre en cohérence l’identité, la promesse et l’expérience.</p></div></section>
+<section class="contact row-contact" id="contact" aria-labelledby="contact-title">
+<div class="contact__information">
+  <div class="contact__identity">
+    <p>Julien Ioset<br>Consulting</p>
+    <address>Case postale 1000<br>Lausanne 12<br>Suisse</address>
+    <p class="contact__telephone"><span>Téléphone</span><a href="tel:+41789138008">+41 78 913 80 08</a></p>
+    <p class="contact__email"><span>Email</span><a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a></p>
   </div>
-</section>
-
-<!-- 5. Sur demande -->
-<section class="ondemand wrap" aria-labelledby="ondemand-title">
-  <h2 class="lead" id="ondemand-title">Les études de cas sont transmises sur demande.</h2>
-  <p class="offer__meta">Industrie de précision · Grande distribution</p>
-  <button class="cta" type="button" id="case-open" aria-haspopup="dialog" aria-controls="case-dialog">Demander une étude de cas</button>
-</section>
-
-<dialog class="dialog" id="case-dialog" aria-labelledby="case-title">
-  <!-- TODO: copy (Fermer) -->
-  <button class="dialog__close" type="button" data-close>Fermer</button>
-  <form class="form" id="case-form" novalidate>
-    <p class="lead" id="case-title">L’étude de cas vous est adressée personnellement.</p>
-    <div class="field">
-      <input type="email" name="email" id="case-email" required autocomplete="email"
-             placeholder="Adresse e-mail professionnelle" aria-label="Adresse e-mail professionnelle" aria-describedby="case-email-err">
-      <p class="field__err" id="case-email-err" aria-live="polite"></p>
-    </div>
-    <label class="check"><input type="checkbox" name="newsletter"> <span>Recevoir aussi la newsletter.</span></label>
-    <button type="submit">Recevoir</button>
-    <p class="caption">En cliquant, vous acceptez notre <a href="/privacy-policy/"><u>politique de confidentialité</u></a>.</p>
-  </form>
-  <!-- TODO: copy (success sentence) -->
-  <p class="lead dialog__done" hidden tabindex="-1">[TODO: copy]</p>
-</dialog>
-
-<!-- 6. Contact -->
-<section class="contact" id="contact" aria-labelledby="contact-title">
-  <div class="contact__details">
-    <div class="contact__address">
-      <p>Case postale<br>1000 Lausanne 12</p>
-      <p><a href="tel:+41789138008">+41 78 913 80 08</a></p>
-      <p><a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a></p>
-      <p><a class="cta" href="https://meetings-eu1.hubspot.com/julien-ioset" target="_blank" rel="noopener">Convenir d’un rendez-vous <span class="cta__arrow" aria-hidden="true">↗</span></a></p>
-    </div>
+  <div class="contact__actions">
+    <span class="contact__future-link">Convenir d'un rendez-vous</span>
+    <span class="contact__future-link">Études de cas sur demande</span>
   </div>
-  <div class="contact__text">
-    <h2 class="lead" id="contact-title">Un entretien. Trente minutes.</h2>
-    <p>Ni présentation, ni engagement. Une conversation.</p>
-
-    <form class="form" id="contact-form" novalidate>
-      <div class="field">
-        <input type="text" name="nom" id="c-nom" required autocomplete="name" placeholder="Nom" aria-label="Nom" aria-describedby="c-nom-err">
-        <p class="field__err" id="c-nom-err" aria-live="polite"></p>
-      </div>
-      <div class="field">
-        <input type="text" name="entreprise" id="c-ent" required autocomplete="organization" placeholder="Entreprise" aria-label="Entreprise" aria-describedby="c-ent-err">
-        <p class="field__err" id="c-ent-err" aria-live="polite"></p>
-      </div>
-      <div class="field">
-        <input type="email" name="email" id="c-mail" required autocomplete="email" placeholder="E-mail" aria-label="E-mail" aria-describedby="c-mail-err">
-        <p class="field__err" id="c-mail-err" aria-live="polite"></p>
-      </div>
-      <div class="field">
-        <textarea name="situation" id="c-sit" rows="3" required placeholder="Votre situation, en quelques lignes" aria-label="Votre situation, en quelques lignes" aria-describedby="c-sit-err"></textarea>
-        <p class="field__err" id="c-sit-err" aria-live="polite"></p>
-      </div>
-      <!-- Honeypot -->
-      <div class="hp" aria-hidden="true">
-        <input type="text" name="website" tabindex="-1" autocomplete="off">
-      </div>
-      <button type="submit">Envoyer</button>
-      <!-- TODO: copy (success sentence) -->
-      <p class="lead form__done" hidden tabindex="-1">[TODO: copy]</p>
-    </form>
-  </div>
-</section>
-
-</main>
-
-<!-- 7. Footer -->
+</div>
+<div class="contact__text"><h2 id="contact-title">Formulaire de Contact</h2><form class="form" id="contact-form" novalidate>
+<div class="field"><label for="c-first">Prénom : *</label><input type="text" id="c-first" name="prenom" autocomplete="given-name" placeholder="Prénom" required></div>
+<div class="field"><label for="c-last">Nom de famille : *</label><input type="text" id="c-last" name="nom" autocomplete="family-name" placeholder="Nom de famille" required></div>
+<div class="field"><label for="c-mail">E-mail : *</label><input type="email" id="c-mail" name="email" autocomplete="email" placeholder="E-mail" required></div>
+<div class="field"><label for="c-phone">Téléphone :</label><input type="tel" id="c-phone" name="telephone" autocomplete="tel" placeholder="Téléphone"></div>
+<div class="field"><label for="c-ent">Entreprise :</label><input type="text" id="c-ent" name="entreprise" autocomplete="organization" placeholder="Entreprise"></div>
+<div class="field"><label for="c-subject">Sujet : *</label><select id="c-subject" name="sujet" required><option value="">Choisissez un sujet</option><option>Conseiller</option><option>Planifier</option><option>Diriger</option><option>Autre demande</option></select></div>
+<div class="field"><label for="c-sit">Message *</label><textarea id="c-sit" name="message" placeholder="Message" rows="5" required></textarea></div>
+<button type="submit">Envoyer votre question</button><p class="form-privacy">Pour en savoir plus sur le traitement de vos données, consultez la <a href="/therow2/privacy-policy.html">politique de confidentialité</a>.</p></form></div></section></main>
 <footer class="footer">
   <div class="footer__grid">
     <div class="footer__col footer__col--first">
@@ -287,22 +83,21 @@
       <p>Suisse romande</p>
     </div>
     <nav class="footer__col" aria-label="Ressources">
-      <a href="/insights/">Insights</a>
+      <a href="/therow2/insights/index.html">Insights</a>
       <!-- TODO: confirm URL with Julien -->
-      <a href="#">Questions fréquentes</a>
-      <a href="https://ceomarketing.ch/" target="_blank" rel="noopener">CEO Marketing</a>
+      <a href="/therow2/questions-frequentes.html">Questions fréquentes</a><a href="/therow2/engagement.html">Engagement</a>
       <a href="https://www.linkedin.com/in/julienioset/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
     <nav class="footer__col" aria-label="Informations légales">
-      <a href="/conditions-generales/">Conditions générales</a>
-      <a href="/privacy-policy/">Confidentialité</a>
+      <a href="/therow2/conditions-generales.html">Conditions générales</a>
+      <a href="/therow2/privacy-policy.html">Confidentialité</a>
       <p>Site sans cookies</p>
-    </nav>
+    <a href="/therow2/contact.html">Contact</a><a href="/therow2/engagement.html">Engagement</a></nav>
     <div class="footer__col">
       <p>Case postale</p>
       <p>1000 Lausanne 12</p>
+      <p>Suisse</p>
       <a href="tel:+41789138008">+41 78 913 80 08</a>
-      <a href="mailto:j.ioset@julienioset.ch">j.ioset@julienioset.ch</a>
     </div>
     <form class="footer__col footer__news" id="news-form" novalidate>
       <label class="footer__k" for="news-email">Rester informé</label>
@@ -312,15 +107,14 @@
         <button type="submit" aria-label="S’inscrire à la newsletter">&gt;</button>
       </div>
       <p class="field__err" id="news-email-err" aria-live="polite"></p>
-      <label class="check"><input type="checkbox" id="news-consent" name="consent" required aria-describedby="news-consent-err"> <span>J’accepte la <a href="/privacy-policy/"><u>politique de confidentialité</u></a>.</span></label>
+      <label class="check"><input type="checkbox" id="news-consent" name="consent" required aria-describedby="news-consent-err"> <span>J’accepte la <a href="/therow2/privacy-policy.html"><u>politique de confidentialité</u></a>.</span></label>
       <p class="field__err" id="news-consent-err" aria-live="polite"></p>
       <!-- TODO: copy (success sentence) -->
-      <p class="news__done" hidden tabindex="-1">[TODO: copy]</p>
+      <p class="news__done" hidden tabindex="-1">Maquette — aucune inscription n’est envoyée.</p>
     </form>
   </div>
   <p class="footer__copy">© 2026 Julien Ioset</p>
-</footer>
+</footer><p id="preview-status" role="status" hidden></p><script src="preview.js"></script><script defer src="/therow2/mobile-row.js"></script><script defer src="/therow2/newsletter-popup.js"></script></body></html>
 
-<script src="main.js" defer></script>
-</body>
-</html>
+
+

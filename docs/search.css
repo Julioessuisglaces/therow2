@@ -15,3 +15,28 @@ body>header nav .search-open{display:none!important}
 .mobile-search-open{display:flex!important;justify-content:space-between;align-items:center;border:0;border-bottom:1px solid #ededed;background:white;font-size:13px;font-family:inherit;width:100%;text-align:left;padding:19px 0;cursor:pointer}
 .mobile-search-open::after{content:'›';font-size:19px}
 }
+
+/* Full-width search expansion below header, in the spirit of The Row. */
+.site-search{position:fixed!important;left:0!important;right:0!important;top:60px!important;width:100%!important;max-width:none!important;max-height:calc(100dvh - 60px);overflow-y:auto!important;padding:62px max(28px,calc((100vw - 390px)/2)) 58px!important;border:0!important;border-bottom:1px solid #e3e3e3!important;box-shadow:none!important;animation:search-drop .22s ease-out both}
+.site-search__row{position:static;margin:0 0 26px!important}
+.site-search__row label{display:none}
+.site-search__close{position:absolute!important;right:clamp(24px,4vw,72px)!important;top:20px!important;font-size:29px!important}
+.site-search input[type=search]{width:100%!important;height:37px!important;border-bottom:1px solid #222!important}
+.site-search__hint{margin:23px 0 3px!important}
+.site-search__results a{border-bottom:0!important;padding:7px 0!important}
+.site-search__results p{border-bottom:0!important}
+@keyframes search-drop{from{opacity:.4;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:767px){.site-search{top:56px!important;max-height:calc(100dvh - 56px);padding:54px 24px 42px!important}.site-search__close{top:13px!important;right:22px!important}}
+@media(prefers-reduced-motion:reduce){.site-search{animation:none!important}}
+
+/* Search state: opaque white header even over the top-of-page hero. */
+html body.search-visible > header{background:#fff!important;background-image:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;opacity:1!important;border-bottom:1px solid #e3e3e3!important;}
+html body.search-visible > header .wordmark,html body.search-visible > header nav a,html body.search-visible > header nav button{color:#111!important;}
+html body.search-visible > header .mobile-menu-toggle span{background:#111!important;}
+
+/* Mobile search icon in the right-hand side of the persistent header. */
+.mobile-search-icon{display:none}
+@media(max-width:767px){html body>header .mobile-search-icon{display:flex!important;position:absolute!important;right:14px!important;top:0!important;width:32px!important;height:55px!important;align-items:center!important;justify-content:center!important;padding:0!important;border:0!important;background:transparent!important;color:#333!important;cursor:pointer!important;z-index:1102!important}html body>header .mobile-search-icon svg{display:block!important;width:19px!important;height:19px!important;stroke-width:1.15!important}html body.search-visible>header .mobile-search-icon{color:#111!important}}
+
+/* Keep desktop information navigation on the right after mobile search icon is injected. */
+@media(min-width:768px){html body>header>nav[aria-label="Informations"]{justify-content:flex-end!important;justify-self:stretch!important;align-items:center!important;}}

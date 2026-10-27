@@ -176,3 +176,9 @@ html body header .wordmark { font-family:'Basic Commercial',Arial,sans-serif; fo
 /* Keep form fields border-free on focus without losing a visible caret. */
 html body input:focus,html body input:focus-visible,html body textarea:focus,html body textarea:focus-visible,html body select:focus,html body select:focus-visible{outline:none!important;box-shadow:none!important;}
 
+
+/* Compact desktop footer: approximately 250px total height. */
+@media(min-width:901px){html body footer.footer{height:250px!important;min-height:250px!important;box-sizing:border-box!important;padding:29px 44px 19px!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important}html body footer.footer .footer__copy{margin-top:12px!important}html body footer.footer .footer__col{gap:9px!important}html body footer.footer .footer__gap{margin-top:12px!important}}
+
+/* Restore full-width desktop footer columns within the 250px footer. */
+@media(min-width:901px){html body footer.footer{width:100%!important;max-width:none!important}html body footer.footer .footer__grid{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;align-self:stretch!important;grid-template-columns:200px repeat(3,minmax(0,1fr)) 300px!important}}

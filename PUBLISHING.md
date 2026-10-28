@@ -7,9 +7,9 @@
 ## What to edit
 
 - `docs/index.html`: homepage
-- `docs/insights/index.html`: Insights collection (28 cards)
+- `docs/insights/index.html`: Insights collection (19 visible cards; the nine `Blog`-labelled posts have been removed from the collection, but their pages remain available)
 - `docs/insights/*.html`: article pages (28 articles)
-- `docs/insights/images/`: recovered lead images (19 of the 28; missing images were not manufactured)
+- `docs/insights/images/`: article images (15 updated WebP illustrations, four unchanged images in the visible collection; the nine hidden Blog articles remain image-free)
 - `docs/downloads/illustrations-insights-originales-20261026.zip`: recovered editorial illustrations and manifest
 - `docs/consistency.css`, `docs/mobile-row.css`, `docs/insights/insights.css`: styling
 - `content/insights-essentiels.json`: revised article text and original slugs in editable form
@@ -40,4 +40,4 @@ Quiet luxury, black-and-white, minimalist typography, spacious editorial layout.
 
 ## Verification after changes
 
-Check the 28 articles and images, Insights card links, FAQ, header search, mobile navigation, and footer at the live GitHub Pages URL. Confirm the latest GitHub commit appears on `main` before treating a push as complete.
+Check the 19 visible Insights cards and their images, preserved 28 article pages, FAQ, header search, mobile navigation, and footer at the live GitHub Pages URL. Confirm the latest GitHub commit appears on `main` before treating a push as complete.

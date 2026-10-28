@@ -3,4 +3,4 @@ for(const a of json.articles){const p=path.join(articles,a.filename);if(!fs.exis
 const index=fs.readFileSync(path.join(articles,'index.html'),'utf8');const countCards=(index.match(/class="insight-card"/g)||[]).length;
 const zip=path.join(docs,'downloads','illustrations-insights-originales-20261026.zip');
 const report={inspected,siteFiles:files.length,articles:json.articles.length,indexCards:countCards,links,broken:broken.slice(0,30),unprefixed:unprefixed.slice(0,30),missingArticle,badEntities,badCookie,zipBytes:fs.statSync(zip).size};
-console.log(JSON.stringify(report,null,2));if(broken.length||unprefixed.length||missingArticle.length||badEntities.length||badCookie.length||countCards!==28)process.exitCode=1;
+console.log(JSON.stringify(report,null,2));if(broken.length||unprefixed.length||missingArticle.length||badEntities.length||badCookie.length||countCards!==19)process.exitCode=1;
